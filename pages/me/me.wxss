@@ -1,0 +1,129 @@
+/* pages/me/me.wxss */
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.my-bg {
+  width: 100%;
+  /* background-size: cover; */
+}
+
+.me-top {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  text-align: center;
+  width: 100%;
+  margin: 30rpx auto;
+  padding: 50rpx 0;
+  color: #fff;
+}
+
+.myHead {
+  margin: 0 auto;
+}
+
+.head-icon {
+  width: 158rpx;
+  height: 160rpx;
+  border-radius: 100%;
+  /* width: 100%; */
+}
+
+.userName, .userId {
+  font-size: 28rpx;
+  display: block;
+  margin-top: 10rpx;
+}
+
+.me-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30rpx;
+  /* height: 100rpx; */
+  margin-top: 130rpx;
+}
+
+.me-tabs .icons {
+  width: 44rpx;
+  height: 42rpx;
+  margin: 0 auto;
+   margin-bottom: 18rpx;
+}
+
+.me-tabs .txt {
+  font-size: 20rpx;
+}
+
+.fd-icon, .kf-icon {
+ 
+  width: 100%;
+}
+
+
+.list-icon {
+  width: 40rpx;
+  height: 38rpx;
+  margin-right: 24rpx;
+}
+
+.lists {
+  margin-top: 95%;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+  height: 320rpx;
+  justify-content: space-between;
+  padding: 0 100rpx;
+  box-sizing: border-box;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  font-size: 32rpx;
+  color: rgb(51,51,51);
+}
+
+.lists .switch {
+  margin-top: 10rpx;
+}
+
+.lists .switchBtn {
+  width: 104rpx;
+  height: 42rpx;
+  border-radius: 22rpx;
+  background: rgb(5, 182, 197);
+  color: #fff;
+  line-height: 42rpx;
+  font-size: 26rpx;
+  padding: 0;
+}
+
+.serviceCenter {
+  font-size: 22rpx;
+}
+
+/*我是房客  */
+
+.fk-bg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.fkImg {
+  width: 100%;
+}

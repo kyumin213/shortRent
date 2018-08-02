@@ -1,0 +1,2 @@
+/* pages/houseManage/addHouse/addHouse.wxss */
+@import '../houseDetails/houseDetails.wxss'

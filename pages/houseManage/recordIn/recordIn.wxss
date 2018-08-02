@@ -1,0 +1,32 @@
+/* pages/houseManage/recordIn/recordIn.wxss */
+.record{
+  margin-bottom: 102rpx;
+}
+.recordList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26rpx 40rpx;
+  font-size: 32rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.recordList .tenantsName{
+  font-size: 36rpx;
+  color: rgb(3,180,197);
+}
+.recordList .tel{
+  font-size: 26rpx;
+  color: rgb(102,102,102);
+}
+.recordList .authen{
+  font-size: 24rpx;
+  color: rgb(3,180,197);
+  margin: 10rpx;
+  font-family: 'PingFang-SC-Bold';
+}
+.listRight{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,0 +1,267 @@
+/* pages/houseManage/houseDetails/houseDetails.wxss */
+
+.color {
+  color: rgb(102, 102, 102);
+}
+
+.itemColor {
+  color: rgb(0, 177, 197);
+}
+
+picker {
+  width: 100%;
+}
+
+.listB {
+  border-bottom: 2rpx solid #ccc;
+}
+
+/*没有房间  */
+
+.house-list {
+  border-top: 20rpx solid #efeff5;
+  border-bottom: 20rpx solid #efeff5;
+}
+
+.house-list .items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  height: 110rpx;
+  border-bottom: 2rpx solid #ccc;
+  font-size: 32rpx;
+}
+
+.house-list .items input {
+  width: 95%;
+}
+
+.house-list .items .jt {
+  display: inline-block;
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 2rpx solid #ccc;
+  border-right: 2rpx solid #ccc;
+  transform: rotate(45deg);
+}
+
+.house-list .position {
+  padding: 20rpx 30rpx;
+  font-size: 32rpx;
+}
+
+.house-list .position .remand {
+  display: block;
+  color: rgb(153, 153, 153);
+  font-size: 24rpx;
+  padding-top: 15rpx;
+}
+
+/*地图  */
+
+.section-map {
+  position: relative;
+  z-index: 99;
+  box-sizing: border-box;
+}
+
+map {
+  position: static;
+  z-index: 99;
+}
+
+/* .house-list .color{
+  color: rgb(102, 102, 102);
+} */
+
+/*下一步按钮  */
+
+.next {
+  position: fixed;
+  bottom: 100rpx;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.next .nextBtn {
+  width: 80%;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 36rpx;
+  border-radius: 44rpx;
+  background-color: rgb(0, 177, 197);
+}
+
+/*有信息时  */
+
+.lockPhoto {
+  width: 100%;
+  height: 428rpx;
+  background: #ccc;
+  text-align: center;
+  position: relative;
+}
+
+.lockPhoto .headImg {
+  width: 100%;
+  height: 428rpx;
+}
+
+.lockPhoto .lockImg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.lockPhoto .photoCenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 278rpx;
+  height: 172rpx;
+  margin-left: -139rpx;
+  margin-top: -86rpx;
+  border-radius: 6rpx;
+  background: rgba(0, 0, 0, 0.4);
+  padding-top: 18rpx;
+  text-align: center;
+}
+
+.lockPhoto .photoCenter .uploadIcon {
+  width: 100%;
+  height: 66rpx;
+  text-align: center;
+}
+
+.lockPhoto .photoCenter .camera-icon {
+  width: 60rpx;
+  /* height: 50rpx; */
+  background-size: cover;
+}
+
+.lockPhoto .photoCenter text {
+  display: block;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.lockPhoto .photoCenter .addTxt {
+  margin-bottom: 4rpx;
+}
+
+.houseList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 40rpx;
+  border-bottom: 2rpx solid #ccc;
+  font-size: 32rpx;
+  padding: 10rpx 0;
+}
+
+.house .houseList:last-child {
+  border-bottom: none;
+}
+
+.houseList .itemResult {
+  display: inline-block;
+  width: 100%;
+  color: rgb(77, 77, 77);
+  font-size: 26rpx;
+}
+
+.houseList .addressItem {
+  width: 70%;
+}
+
+.houseList .listRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 120rpx;
+}
+
+.houseList .listRight .txtCol {
+  color: rgb(0, 177, 197);
+  font-size: 26rpx;
+}
+
+.houseList .listRight .unCol {
+  color: rgb(153, 153, 153);
+  font-size: 26rpx;
+  margin-right: 54rpx;
+}
+
+.roomNumber {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #f2f2f2;
+  font-size: 26rpx;
+  color: rgb(153, 153, 153);
+}
+
+.houseBtn {
+  text-align: center;
+  padding: 30rpx 20rpx;
+}
+
+.unBindBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+.unBindBtn .unbindSub,.unBindBtn .sendCode{
+  width: 340rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+  color: rgb(0, 177, 197);
+   border: 2rpx solid rgb(0, 177, 197);
+   border-radius: 40rpx;
+}
+.houseBtn button {
+  display: inline-block;
+  /* width: 50%; */
+}
+
+.houseBtn .unbind, .houseBtn .send {
+  width: 340rpx;
+  height: 78rpx;
+  border-radius: 40rpx;
+  border: 2rpx solid rgb(0, 177, 197);
+  font-size: 30rpx;
+  color: rgb(0, 177, 197);
+}
+
+.houseBtn .send {
+  background: rgb(0, 177, 197);
+  color: #fff;
+  margin-left: 26rpx;
+}
+
+.houseBtn .unbind {
+  width: 586rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 44rpx;
+  color: #fff;
+  background: rgb(212, 212, 212);
+  font-size: 36rpx;
+  border: none;
+}
+
+.houseBtn .bind {
+  background: rgb(0, 177, 197);
+}
+
+.unBindBtn .sendCode {
+  color: #fff;
+  background: rgb(0, 177, 197);
+  border: none;
+}

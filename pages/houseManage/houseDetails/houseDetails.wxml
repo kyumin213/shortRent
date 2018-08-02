@@ -1,0 +1,158 @@
+<!--pages/houseManage/houseDetails/houseDetails.wxml-->
+<view>
+  <view class='lockPhoto'>
+    <view class='headImg'>
+      <image src='{{src}}' class='lockImg'></image>
+    </view>
+    <view class='photoCenter' bindtap='uploadImg'>
+      <view class='uploadIcon'>
+        <image src='../../../image/house/camera.png' class='camera-icon' mode='widthFix'></image>
+      </view>
+      <text class='addTxt'>添加房间门锁照片</text>
+      <text>(已完成)</text>
+    </view>
+  </view>
+  <view class='house'>
+    <view class='houseList'>
+      <view class='addressItem'>
+        <text class='itemColor'>房屋地址</text>
+        <view class='itemResult'>
+          <text>{{houseDetails.houseAddress}}</text>
+        </view>
+      </view>
+      <view class='listRight'>
+        <text class="{{address?'show':'hidden'}} txtCol">已完成</text>
+        <text class="{{address?'hidden':'show'}} unCol">未完成</text>
+        <view class="{{address?'show':'hidden'}} complete">
+          <text class='complete-icon'></text>
+        </view>
+        <text class='jt'></text>
+      </view>
+    </view>
+    <view class='houseList' bindtap='houseStatus'>
+      <view>
+        <text class='itemColor'>房屋信息</text>
+        <view>
+          <text class='itemResult'>描写房屋基本信息</text>
+        </view>
+      </view>
+      <view class='listRight'>
+        <text class="{{houseStatus?'show':'hidden'}} txtCol">已完成</text>
+        <text class="{{houseStatus?'hidden':'show'}} unCol">未完成</text>
+        <view class="{{houseStatus?'show':'hidden'}} complete">
+          <text class='complete-icon'></text>
+        </view>
+        <text class='jt'></text>
+      </view>
+    </view>
+    <view class='houseList' bindtap='houseDes'>
+      <view>
+        <text class='itemColor'>房屋描述</text>
+        <view>
+          <text class='itemResult'>描写房屋特色</text>
+        </view>
+      </view>
+      <view class='listRight'>
+        <text class="{{describe?'show':'hidden'}} txtCol">已完成</text>
+        <text class="{{describe?'hidden':'show'}} unCol">未完成</text>
+        <view class="{{describe?'show':'hidden'}} complete">
+          <text class='complete-icon'></text>
+        </view>
+        <text class='jt'></text>
+      </view>
+    </view>
+    <view bindtap='bindDevice' class='houseList'>
+      <!-- <navigator open-type="navigate" url='../bindDevice/bindDevice?housePkcode=' class='houseList' hover-class='none'> -->
+      <view>
+        <text class='itemColor'>绑定设备</text>
+        <view>
+          <text class='itemResult'>智能公寓锁</text>
+        </view>
+      </view>
+      <view class='listRight'>
+        <text class="{{bindDevice?'show':'hidden'}} txtCol">已完成</text>
+        <text class="{{bindDevice?'hidden':'show'}} unCol">未完成</text>
+        <view class="{{bindDevice?'show':'hidden'}} complete">
+          <text class='complete-icon'></text>
+        </view>
+        <text class='jt'></text>
+      </view>
+      <!-- </navigator> -->
+    </view>
+    <view class='houseList' bindtap='setting'>
+      <view>
+        <text class='itemColor'>基本设置</text>
+        <view>
+          <text class='itemResult'>房源配套设施</text>
+        </view>
+      </view>
+      <view class='listRight'>
+        <text class="{{complete?'show':'hidden'}} txtCol">已完成</text>
+        <text class="{{complete?'hidden':'show'}} txtCol unCol">未完成</text>
+        <view class="{{complete?'show':'hidden'}} complete">
+          <text class='complete-icon'></text>
+        </view>
+        <text class='jt'></text>
+      </view>
+    </view>
+    <!-- <view class='houseList' bindtap='identity'>
+      <view>
+        <text class='itemColor'>身份认证</text>
+        <view>
+          <text class='itemResult'>用于实名认证</text>
+        </view>
+      </view>
+      <view class='listRight'>
+        <text class="{{identity?'show':'hidden'}} txtCol">已完成</text>
+        <text class="{{identity?'hidden':'show'}} txtCol unCol">未完成</text>
+        <view class="{{identity?'show':'hidden'}} complete">
+          <text class='complete-icon'></text>
+        </view>
+        <text class='jt'></text>
+      </view>
+    </view> -->
+    <view class='houseList' bindtap='property'>
+      <view>
+        <text class='itemColor'>房产证认证</text>
+        <view>
+          <text class='itemResult'>用于房产证审核</text>
+        </view>
+      </view>
+      <view class='listRight'>
+        <text class="{{property?'show':'hidden'}} txtCol">已完成</text>
+        <text class="{{property?'hidden':'show'}} txtCol unCol">未完成</text>
+        <view class="{{property?'show':'hidden'}} complete">
+          <text class='complete-icon'></text>
+        </view>
+        <text class='jt'></text>
+      </view>
+    </view>
+    <view class='houseList' bindtap='recordIn' data-index="{{index}}" wx:if="{{checkArray!=''}}">
+      <view>
+        <text class='itemColor'>入住申请</text>
+        <!-- <view>
+          <text class='itemResult'>描写房屋基本信息</text>
+        </view> -->
+      </view>
+      <view class='listRight'>
+        <text class="{{checkIn?'show':'hidden'}} txtCol">已完成</text>
+        <text class="{{checkIn?'hidden':'show'}} unCol">未完成</text>
+        <view class="{{checkIn?'show':'hidden'}} complete">
+          <text class='complete-icon'></text>
+        </view>
+        <text class='jt'></text>
+      </view>
+    </view>
+  </view>
+  <view class='roomNumber'>
+    <text>房间编号：</text>
+    <text>108</text>
+  </view>
+  <view class='houseBtn'>
+    <button class="{{com?'unbind bind':'unbind'}}">确认绑定</button>
+  </view>
+  <view class='houseBtn unBindBtn' wx:if="{{bindHouse}}">
+    <button class='unbindSub' bindtap='unbindHouse'>解除绑定</button>
+    <button class="sendCode" bindtap='sendCode'>发送二维码</button>
+  </view>
+</view>

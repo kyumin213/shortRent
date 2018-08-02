@@ -1,0 +1,13 @@
+<!--pages/scanBind/scanBind.wxml-->
+<view class='bg-c'>
+  <view>
+    <view class='scan'>
+      <text class='tl'></text>
+      <text class='tr'></text>
+      <text class='bl'></text>
+      <text class='br'></text>
+      <text class='scan-icon'></text>
+    </view>
+    <view class='txt'>把二维码放入框内，即可自动扫描</view>
+  </view>
+</view>

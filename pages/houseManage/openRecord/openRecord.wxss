@@ -1,0 +1,139 @@
+/* pages/houseManage/openRecord/openRecord.wxss */
+
+.bg-c {
+  background: rgb(248, 248, 248);
+}
+
+.haveRecord .bg-c {
+  background: rgb(237, 238, 239);
+}
+
+.open {
+  width: 380rpx;
+  height: 380rpx;
+  margin: 224rpx auto 0 auto;
+}
+
+.open .open-icon {
+  width: 100%;
+  background-size: cover;
+}
+
+.noRecord {
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  color: rgb(153, 153, 153);
+  margin-top: 70rpx;
+}
+
+.openCon {
+  width: 100%;
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 30rpx 34rpx 0 34rpx;
+  box-sizing: border-box;
+}
+
+.openCon .dataItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30rpx;
+}
+
+.openCon .openRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.openCon .openRight .jt {
+  transform: rotate(-45deg);
+  margin-left: 6rpx;
+}
+
+.openRight .complete {
+  display: inline-block;
+}
+
+.openCon .dataItem .openData {
+  font-size: 36rpx;
+  color: rgb(3, 180, 197);
+}
+
+.openCon .dataItem .openTime {
+  font-size: 26rpx;
+}
+
+.openCon .timeItems {
+  padding: 20rpx 0;
+  border-top: 2rpx solid #ccc;
+  position: relative;
+}
+
+.openCon .timeItems .sjz {
+  position: absolute;
+  top: 10rpx;
+  left: 100rpx;
+  width: 2rpx;
+  height: 95%;
+  background: #ccc;
+  z-index: 1;
+}
+
+.openCon .timeIcon {
+  position: relative;
+  display: inline-block;
+  width: 12rpx;
+  height: 12rpx;
+  background: rgb(0, 183, 198);
+  border-radius: 100%;
+  z-index: 3;
+}
+
+.openCon .timeList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8rpx 0;
+}
+
+.openCon .timeList .timeLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.openCon .timeList .doorName {
+  font-size: 24rpx;
+  color: rgb(51, 51, 51);
+  height: 100%;
+  padding-left: 30rpx;
+}
+
+.openCon .timeList .times {
+  font-size: 34rpx;
+}
+
+.openCon .timeList .pm {
+  font-size: 18rpx;
+}
+
+.openCon .timeList .timeCen {
+  text-align: center;
+  width: 66rpx;
+  margin-right: 30rpx;
+}
+
+.jtTop {
+  display: inline-block;
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 2rpx solid #ccc;
+  border-right: 2rpx solid #ccc;
+  transform: rotate(135deg);
+  transition: ease-in-out 0.4s;
+  margin-left: 6rpx;
+}

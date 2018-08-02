@@ -1,0 +1,85 @@
+/* pages/scanBind/scanBind.wxss */
+
+.bg-c {
+  background: #141414;
+}
+
+.scan {
+  width: 368rpx;
+  height: 368rpx;
+  background: #4e4e4e;
+  border: 2rpx solid rgb(255, 255, 255);
+  margin: 330rpx auto 124rpx auto;
+  position: relative;
+}
+
+.scan .tl {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  border-top: 8rpx solid rgb(0, 177, 197);
+  border-left: 8rpx solid rgb(0, 177, 197);
+  position: absolute;
+  top: -10rpx;
+  left: -12rpx;
+}
+
+.scan .tr {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  border-top: 8rpx solid rgb(0, 177, 197);
+  border-right: 8rpx solid rgb(0, 177, 197);
+  position: absolute;
+  top: -10rpx;
+  right: -12rpx;
+}
+
+.scan .bl {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  border-bottom: 8rpx solid rgb(0, 177, 197);
+  border-left: 8rpx solid rgb(0, 177, 197);
+  position: absolute;
+  bottom: -10rpx;
+  left: -12rpx;
+}
+
+.scan .br {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  border-bottom: 8rpx solid rgb(0, 177, 197);
+  border-right: 8rpx solid rgb(0, 177, 197);
+  position: absolute;
+  bottom: -10rpx;
+  right: -12rpx;
+}
+
+.scan-icon {
+  position: absolute;
+  top: 20rpx;
+  left: 59rpx;
+  width: 250rpx;
+  height: 8rpx;
+  background: linear-gradient(265deg, rgba(8, 226, 223, 0.1), rgba(19, 197, 236, 8), rgba(8, 226, 223, 0.1));
+  animation: scan  ease-in-out .6s infinite alternate;
+}
+@keyframes scan{
+  0%{
+    position: absolute;
+    transform:translate(0,20rpx)
+  }
+  100%{
+    position: absolute;
+    transform:translate(0,300rpx)
+  }
+  
+}
+.txt{
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 26rpx;
+}

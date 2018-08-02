@@ -1,0 +1,38 @@
+<!--pages/faceRecognition/faceRecognition.wxml-->
+<view class='bg-c'>
+  <view class='hidden'>
+    <view class='head'>
+      <image class='head-bg' src='../../image/face-bg.png' mode='widthFix'></image>
+    </view>
+    <view class='faceTxt'>
+      <text>请遵照邀请拍摄本人的照片</text>
+      <text>否则会导致面部识别失败</text>
+    </view>
+    <view class='faceImg'>
+      <image class='face' src='../../image/face.png' mode='widthFix'></image>
+    </view>
+    <view class='explain'>
+      <view class='items'>拍照要求</view>
+      <view class='items'>请选择光线充足，浅色背景的环境拍照</view>
+      <view class='items'>请拍摄脸部正面照片，角度参照证件照</view>
+      <view class='items'>面部占整修照片比例与证件照相同</view>
+    </view>
+    <view class='start'>
+      <button class='startBtn'>开始认证</button>
+    </view>
+    <view class='color endTxt'>即将开始多因子人脸认证</view>
+  </view>
+  <view>
+    <view class='txtOne'>拿起手机，对准面部</view>
+    <!-- <view class='head-con'> -->
+    <view>
+      <text class='camera'></text>
+      <!-- <text class='camera-cen'></text> -->
+      <text></text>
+    </view>
+    <view class='camera-cen'>
+      <text class='faceshow'>对准面部</text>
+    </view>
+    <!-- </view> -->
+  </view>
+</view>

@@ -1,0 +1,113 @@
+/* pages/houseManage/twoCode/twoCode.wxss */
+
+.bg-c {
+  background: #edeeef;
+}
+
+.codeCenter {
+  margin: 18rpx 28rpx 0 28rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.codeCenter .codeHead {
+  text-align: center;
+}
+
+.codeCenter .codeHead .houseName {
+  font-size: 50rpx;
+  padding: 36rpx 0 12rpx 0;
+}
+
+.codeCenter .codeHead .houseNo {
+  font-size: 30rpx;
+}
+
+.codeCenter .ewm {
+  width: 360rpx;
+  height: 360rpx;
+  margin: 34rpx auto;
+}
+
+.codeCenter .ewm .codeImg {
+  width: 100%;
+  /* height: 100%; */
+  background-size: cover;
+}
+
+.sendCus {
+  margin: 0 auto 66rpx auto;
+  width: 596rpx;
+  border-radius: 46rpx;
+  border: 4rpx solid rgb(0, 177, 197);
+  font-size: 36rpx;
+  text-align: center;
+  height: 94rpx;
+  line-height: 94rpx;
+  background: rgb(0, 177, 197);
+  color: #fff;
+}
+
+.phone {
+  background: #fff;
+  margin: 0 28rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  margin-top: -14rpx;
+}
+
+.tel {
+  height: 200rpx;
+  width: 100%;
+}
+
+.tel .col {
+  color: rgb(204, 204, 204);
+  line-height: 36rpx;
+  font-size: 28rpx;
+}
+
+.items {
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 30rpx;
+}
+
+.phontTxt {
+  font-size: 32rpx;
+  margin-left: 20rpx;
+}
+
+.phontTxt .sl {
+  margin-left: 8rpx;
+  font-size: 26rpx;
+  color: rgb(179, 179, 179);
+}
+
+.fillPhone {
+  width: 100%;
+  padding: 0 30rpx 30rpx 30rpx;
+  font-size: 28rpx;
+  word-break:break-all;
+  box-sizing: border-box;
+}
+
+.itemLeft {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.writeIcon {
+  width: 100%;
+}
+
+/*邀请码  */
+
+.houseCode {
+  width: 100%;
+  text-align: center;
+  margin: 66rpx auto 30rpx auto;
+  font-size: 34rpx;
+}

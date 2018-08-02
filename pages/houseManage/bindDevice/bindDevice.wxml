@@ -1,0 +1,54 @@
+<!--pages/houseManage/bindDevice/bindDevice.wxml-->
+<view class='bg-c'>
+  <form bindsubmit='bindDevice'>
+    <view class='deviceList'>
+      <text class='fonzCol texName'>绑定设备</text>
+      <view>
+        <text class="{{bind?'show':'hidden'}} color txtStutas">已绑定</text>
+        <text class="{{bind?'hidden':'show'}} color txtStutas">未绑定</text>
+        <!-- <text class='jt'></text> -->
+      </view>
+    </view>
+    <view class='deviceList'>
+      <view>
+        <text class='fonzCol texName'>序列号</text>
+        <view>
+          <text class='color txtStutas'>用于显示设备的序列号</text>
+        </view>
+      </view>
+      <view>
+        <input class='color inpSeries' name='series' type='text' placeholder='请输入序列号' value='{{deviceid}}' />
+      </view>
+    </view>
+    <view class="deviceList" wx:if="{{deviceName != null}}">
+      <view>
+        <text class='fonzCol texName'>名称</text>
+        <view>
+          <text class='color txtStutas'>用于显示设备的名称</text>
+        </view>
+      </view>
+      <view>
+        <input class='color inpSeries' name='deviceName' type='text' placeholder='请输设备名称' value='{{deviceName}}' />
+      </view>
+    </view>
+    <!-- <view class='deviceList'>
+      <view>
+        <text class='fonzCol texName'>出厂日期</text>
+        <view>
+          <text class='color txtStutas'>显示设备出厂日期</text>
+        </view>
+      </view>
+      <view>
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          <view class="picker">
+            <input class='color inpSeries' name='proData' type='text' placeholder='请输入设备日期' value='{{date}}' />
+          </view>
+        </picker>
+        
+      </view>
+    </view> -->
+    <view class='scan' wx:if="{{deviceid==null}}">
+      <button class='scanBtn' form-type='submit'>绑定</button>
+    </view>
+  </form>
+</view>

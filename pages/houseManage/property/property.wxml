@@ -1,0 +1,58 @@
+<!--pages/houseManage/property/property.wxml-->
+<view class='bg-c'>
+  <view wx:if="{{hashList}}">
+    <view class='ts-text'>
+      <text>您的照片仅用于审核，我们将为您严格保密</text>
+    </view>
+    <view class='property' bindtap='uploadOne' data-id="propertyOne">
+      <view class='posiImg'>
+        <image src='{{propertyOne}}' class='posi'></image>
+      </view>
+      <view class='upload'>
+        <view class='uploadPosi'>
+          <image src='../../../image/sfrz2x.png' class='uplodIcon'></image>
+        </view>
+        <text class='color txt'>拍摄房产证所有权页</text>
+      </view>
+    </view>
+    <!-- <view class='property' bindtap='propertyOne' data-id="propertyTwo">
+      <view class='posiImg'>
+        <image src='{{propertyTwo}}' class='posi'></image>
+      </view>
+      <view class='upload'>
+        <view class='uploadPosi'>
+          <image src='../../../image/sfrz2x.png' class='uplodIcon'></image>
+        </view>
+        <text class='color txt'>拍摄房产证附记页</text>
+      </view>
+    </view> -->
+    <view class='submit'>
+      <button class='subBtn' bindtap='fileSubmit'>提交</button>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='success'>
+      <view class='con'>
+        <view class='successImg'>
+          <image src='../../../image/success.png' class="{{success?'show':'hidden'}} successIcn"></image>
+          <image src='../../../image/fail.png' class="{{success?'hidden':'show'}} successIcn"></image>
+        </view>
+        <view class="{{success?'show':'hidden'}} fonzCol successTxt">
+          <text>认证成功</text>
+        </view>
+        <view class='fonzCol successTxt'>
+          <text class="{{success?'hidden':'show'}}">认证失败</text>
+        </view>
+        <view class="{{success?'show':'hidden'}} canTxt">
+          <text>恭喜您，完成了房产验证</text>
+        </view>
+        <view class="{{success?'hidden':'show'}} canTxt">
+          <text>请返回认证页面重新认证</text>
+        </view>
+      </view>
+    </view>
+    <view class='back'>
+      <button class='backBtn' bindtap='backBtn'>返回</button>
+    </view>
+  </view>
+</view>

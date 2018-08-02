@@ -1,0 +1,158 @@
+<!--pages/houseManage/houseSetting/houseSetting.wxml-->
+<view class='bg-c'>
+  <view class='setTitle'>
+    <text class='fonzCol'>基本设备</text>
+  </view>
+  <view class='basicDevice'>
+    <view class='deviceItem'>
+      <view>
+        <view class='imgs' bindtap='onclick'>
+          <image class="{{wifi?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/wifi@2x.png' mode='widthFix'></image>
+          <image class="{{wifi?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/wifi@2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>WIFI</text>
+        </view>
+      </view>
+      <view>
+        <view class='imgs' bindtap='tvClick'>
+          <image class="{{tv?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/tv2x.png' mode='widthFix'></image>
+          <image class="{{tv?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/tv2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>电视</text>
+        </view>
+      </view>
+      <view>
+        <view class='imgs' bindtap='xyjClick'>
+          <image class="{{xyj?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/xyj2x.png' mode='widthFix'></image>
+          <image class="{{xyj?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/xyj2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>洗衣机</text>
+        </view>
+      </view>
+    </view>
+    <view class='deviceItem'>
+      <view>
+        <view class='imgs' bindtap='ktClick'>
+          <image class="{{kt?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/kt2x.png' mode='widthFix'></image>
+          <image class="{{kt?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/kt2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>空调</text>
+        </view>
+      </view>
+      <view>
+        <view class='imgs' bindtap='rsqClick'>
+          <image class="{{rsq?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/rsq2x.png' mode='widthFix'></image>
+              <image class="{{rsq?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/rsq2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>热水器</text>
+        </view>
+      </view>
+      <view>
+        <view class='imgs' bindtap='wcClick'>
+          <image class="{{wc?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/wc2x.png' mode='widthFix'></image>
+                <image class="{{wc?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/wc2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>洗手间</text>
+        </view>
+      </view>
+    </view>
+    <view class='deviceItem'>
+      <view>
+        <view class='imgs' bindtap='nqClick'>
+          <image class="{{nq?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/nq2x.png' mode='widthFix'></image>
+           <image class="{{nq?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/nq2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>暖气</text>
+        </view>
+      </view>
+      <view>
+        <view class='imgs' bindtap='bxClick'>
+          <image class="{{bx?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/bx2x.png' mode='widthFix'></image>
+            <image class="{{bx?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/bx2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>冰箱</text>
+        </view>
+      </view>
+      <view class='visibi'>
+        <view class='imgs'>
+          <image class='deviceIcon' src='../../../image/setting/default/bx2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>冰箱</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='setTitle'>
+    <text class='fonzCol'>其他便利设施</text>
+  </view>
+  <view class='basicDevice'>
+    <view class='deviceItem'>
+      <view>
+        <view class='imgs' bindtap='msClick'>
+          <image class="{{ms?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/ms2x.png' mode='widthFix'></image>
+              <image class="{{ms?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/ms2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt zn'>
+          <text>智能门锁</text>
+        </view>
+      </view>
+      <view>
+        <view class='imgs' bindtap='cfjClick'>
+          <image class="{{cfj?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/cfj2x.png' mode='widthFix'></image>
+            <image class="{{cfj?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/cfj2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>吹风机</text>
+        </view>
+      </view>
+      <view>
+        <view class='imgs' bindtap='ycClick'>
+          <image class="{{yc?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/yc2x.png' mode='widthFix'></image>
+               <image class="{{yc?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/yc2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>泳池</text>
+        </view>
+      </view>
+    </view>
+    <view class='deviceItem'>
+      <view>
+        <view class='imgs' bindtap='ygClick'>
+          <image class="{{yg?'hidden':'show'}} deviceIcon" src='../../../image/setting/default/yg2x.png' mode='widthFix'></image>
+           <image class="{{yg?'show':'hidden'}} deviceIcon" src='../../../image/setting/active/yg2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>浴缸</text>
+        </view>
+      </view>
+      <view class='visibi'>
+        <view class='imgs'>
+          <image class='deviceIcon' src='../../../image/setting/default/cfj2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>吹风机</text>
+        </view>
+      </view>
+      <view class='visibi'>
+        <view class='imgs'>
+          <image class='deviceIcon' src='../../../image/setting/default/cfj2x.png' mode='widthFix'></image>
+        </view>
+        <view class='txt'>
+          <text>吹风机</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='preserve'>
+    <button class='preBtn'>保存</button>
+  </view>
+</view>

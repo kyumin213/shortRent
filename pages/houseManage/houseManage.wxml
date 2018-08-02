@@ -1,0 +1,59 @@
+<!--pages/houseManage/houseManage.wxml-->
+<view class='bg-c'>
+  <view wx:if="{{hashList}}">
+    <view wx:for="{{houseData}}" wx:key="{{index}}">
+      <view class='houseItems' data-index="{{index}}" data-id="{{index}}">
+        <view class='houseTitle'>
+          <image class='houseIcon' src='{{houseIcon}}' mode='widthFix'></image>
+          <text>{{item.houseCommunityName}}</text>
+        </view>
+        <view class='items'>
+          <text>房屋状态：</text>
+          <text>已入住</text>
+        </view>
+        <view class='items'>
+          <text>房屋户型：</text>
+          <text>{{item.houseType}}</text>
+        </view>
+        <view class='items'>
+          <text>房屋面积：</text>
+          <text>{{item.houseAcreage}}m²</text>
+        </view>
+        <view class='items'>
+          <text>入住天数：</text>
+          <text>22</text>
+        </view>
+        <view class='itemBtn'>
+          <view>
+            <text>结束时间：</text>
+            <text class='endTime'>2018-07-23</text>
+          </view>
+          <view class='rightBtn'>
+            <button class='del' bindtap='houseDelete' data-index="{{index}}">删除</button>
+            <button class='viewHouse' bindtap='viewHouse' id='{{item.housePkcode}}' data-index="{{index}}">查看房屋</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='addHouse'>
+       <text class='add' bindtap='addHouse'></text> 
+    </view>
+  </view>
+  <view wx:else>
+    <view class='house-imgs'>
+      <image class='house-icon' src='../../image/house-null.png' mode='widthFix'></image>
+    </view>
+    <view class='house-text'>
+      <text class='no-text'>暂无房屋信息</text>
+    </view>
+    <view class='house-text'>
+      <text>赶快点击下方按钮添加房屋吧~</text>
+    </view>
+    <view class='add-house'>
+      <navigator url='addHouse/addHouse'>
+        <button class='add-btn'>添加房屋</button>
+      </navigator>
+    </view>
+  </view>
+
+</view>

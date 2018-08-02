@@ -1,0 +1,4 @@
+<!--pages/index/getPhoneNumber/getPhoneNumber.wxml-->
+<image src='http://hbimg-other.b0.upaiyun.com/img/promotion/40a6314fc88caf35578712e7d8ba1a55ecf147393f8af'></image>
+<button type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信授权登陆</button>
+

@@ -1,0 +1,64 @@
+<!--pages/me/me.wxml-->
+<view>
+  <view class='bg'>
+    <image class="{{switchBtn?'hidden':'show'}} my-bg" src='../../image/me/myBg.png' mode='widthFix'></image>
+    <image class="{{switchBtn?'show':'hidden'}} fkImg" src='../../image/me/fk-bg.png' mode='widthFix'></image>
+  </view>
+  <view class='me-top'>
+    <view class='myHead'>
+      <image class='head-icon' src='{{userInfo.avatarUrl}}' mode='widthFix'></image>
+    </view>
+    <!-- <view> -->
+      <text class='userName'>{{userInfo.nickName}}</text>
+    <!-- </view> -->
+    <!-- <view> -->
+      <text class='userId'>{{phoneNumber}}</text>
+    <!-- </view> -->
+    <view class='me-tabs'>
+      <view class='me-left'>
+        <view class='icons'>
+          <image class='fd-icon' src='../../image/me/fd2x.png' mode='widthFix'></image>
+        </view>
+        <text class="{{switchBtn?'hidden':'show'}} txt">成为熹自租房东1天啦</text>
+        <text class="{{switchBtn?'show':'hidden'}} txt">成为熹自租房客1天啦</text>
+      </view>
+      <view class='me-right'>
+        <view class='icons'>
+          <image class='kf-icon' src='../../image/me/kf2x.png' mode='widthFix'></image>
+        </view>
+        <text  class="{{switchBtn?'show':'show'}} txt">客服中心</text>
+      </view>
+    </view>
+  </view>
+  <view class='lists'>
+    <view>
+      <navigator class="{{switchBtn?'hidden':'show'}}">
+        <view class='items'>
+          <image class='list-icon' src='../../image/me/fd-icon.png'></image>
+          <text>我是房东</text>
+        </view>
+      </navigator>
+      <navigator class="{{switchBtn?'show':'hidden'}}">
+        <view class='items'>
+          <image class='list-icon' src='../../image/me/fd-icon.png'></image>
+          <text>我是房客</text>
+        </view>
+      </navigator>
+      <navigator url='../houseManage/twoCode/twoCode' hover-class='none'>
+        <view class='items'>
+          <image class='list-icon' src='../../image/me/ewm.png'></image>
+          <text>发送二维码</text>
+        </view>
+      </navigator>
+      <navigator url='../authen/authen' hover-class='none'>
+        <view class='items'>
+          <image class='list-icon' src='../../image/me/sfrz.png'></image>
+          <text>身份认证</text>
+        </view>
+      </navigator>
+    </view>
+    <view class='switch'>
+      <button class='switchBtn' bindtap='switchCheck'>切换</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<!--pages/houseManage/recordIn/recordIn.wxml-->
+<view class='bg-c'>
+  <view class='record' wx:for="{{recordList}}" wx:key="{{index}}">
+    <view class='recordList' data-index="{{index}}" data-id="{{index}}" bindtap='checkIn'>
+      <view class='recordLeft'>
+        <view class='tenantsName'>{{item.houseCheckInName}}</view>
+        <text class='tel'>159****6666</text>
+      </view>
+      <view class='listRight'>
+        <view>
+          <text class="{{authen?'show':'hidden'}} authen">已实名认证</text>
+          <text class="{{authen?'hidden':'show'}} authen">未认证</text>
+        </view>
+        <text class='jt'></text>
+      </view>
+    </view>
+  </view>
+</view>

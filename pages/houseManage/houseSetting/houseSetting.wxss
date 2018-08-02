@@ -1,0 +1,60 @@
+/* pages/houseManage/houseSetting/houseSetting.wxss */
+
+.visibi {
+  visibility: hidden;
+}
+
+.setTitle {
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 32rpx;
+  padding-left: 34rpx;
+}
+
+.basicDevice {
+  background: #fff;
+  /* padding: 54rpx 0; */
+}
+
+.deviceItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40rpx 0;
+}
+
+.basicDevice .end {
+  justify-content: flex-start;
+}
+
+.deviceItem .imgs {
+  width: 96rpx;
+}
+
+.deviceItem .deviceIcon {
+  width: 100%;
+}
+
+.deviceItem .txt{
+  color: rgb(102, 102, 102);
+  font-size: 26rpx;
+  text-align: center;
+  width: 96rpx;
+  margin-top: 20rpx;
+}
+
+.deviceItem .zn {
+  width: 104rpx;
+}
+
+.preBtn {
+  width: 596rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #fff;
+  background: rgb(0, 177, 197);
+  margin: 30rpx auto;
+  border-radius: 44rpx;
+  font-size: 36rpx;
+  box-shadow: 0 16rpx 8rpx 2rpx rgba(37,215,204,0.09);
+}

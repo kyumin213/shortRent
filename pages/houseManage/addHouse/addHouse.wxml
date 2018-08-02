@@ -1,0 +1,67 @@
+<!--pages/houseManage/addHouse/addHouse.wxml-->
+<view>
+  <form bindsubmit='next'>
+    <view class='house-list'>
+      <view class='items'>
+        <input placeholder='中国' placeholder-class='color'></input>
+        <text class='jt'></text>
+      </view>
+      <view class='items'>
+        <picker mode="region" bindchange="translate" value="{{region}}" custom-item="{{customItem}}">
+          <input class='inpRegion' name="city" disabled='true' placeholder='城市/区域' placeholder-class='color' value='{{region}}'></input>
+        </picker>
+        <text class='jt'></text>
+      </view>
+      <view class='items'>
+        <input type='text' placeholder='街道地址' name="street" placeholder-class='color' value='{{street}}'></input>
+        <!-- <text class='jt'></text> -->
+      </view>
+      <view class='items' bindtap="powerDrawer" data-statu="show">
+        <input placeholder='小区/楼号/单元号/门牌号' disabled='true' name='area' placeholder-class='color' value='{{xq}}{{lh}}{{dy}}{{mp}}'></input>
+        <text class='jt'></text>
+      </view>
+      <view class='position'>
+        <text class='color'>位置</text>
+        <text class='remand'>请放心，为了保障您的隐私，在客人预定之前我们不会展示您的门牌号</text>
+      </view>
+    </view>
+    <view class='next'>
+      <button class='nextBtn' formType="submit">下一步</button>
+    </view>
+  </form>
+  <view class='section-map'>
+    <map id="myMap" style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" show-location></map>
+  </view>
+  <!--小区  -->
+  <view animation="{{animationData}}" class="modal" wx:if="{{areaStatus}}">
+    <form bindsubmit="preDetails" class='modalShow'>
+      <view class='showModal'>
+        <view class='modalTitle'>
+          <text>详细信息</text>
+          <view class='closeModal' bindtap='closeModal' data-statu="close">
+            <text class="close"></text>
+          </view>
+        </view>
+        <view class='items'>
+          <label>小区</label>
+          <input type='text' name='xq' class='color street' placeholder='请输入小区名' value='{{xq}}'></input>
+        </view>
+        <view class='items'>
+          <label>楼号</label>
+          <input type='text' name='lh' class='color street' placeholder='请输入楼号' value='{{lh}}'></input>
+        </view>
+        <view class='items'>
+          <label>单元号</label>
+          <input type='text' name="dy" class='color street' placeholder='请输入单元号' value='{{dy}}'></input>
+        </view>
+        <view class='items'>
+          <label>门牌号</label>
+          <input type='text' name='mp' class='color street' placeholder='请输入门牌号' value='{{mp}}'></input>
+        </view>
+        <view class='submit'>
+          <button class='subBtn' formType="submit" data-statu='hidden'>确定</button>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,67 @@
+/* pages/index/index.wxss */
+
+.recom {
+  margin: 20rpx 0 20rpx 80rpx;
+  color: rgb(28, 28, 28);
+  font-size: 32rpx;
+}
+
+.banner {
+  width: 100%; 
+  height: 598rpx; 
+  text-align: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.swiper {
+  height: 100%;
+}
+
+.swiper-item{
+  width: 100%;
+  
+}
+.silde-imgage{
+  width: 87%;
+
+}
+
+.open-btn {
+  width: 50%;
+  margin: 30rpx auto 0 auto;
+  text-align: center;
+}
+
+.open-icon {
+  width: 123pt;
+}
+.swiper .wx-swiper-dots.wx-swiper-dots-horizontal{
+     margin-bottom: 110rpx;
+}
+/*输入邀请码  */
+.inpCode{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.inpCode .ts{
+  font-size: 26rpx;
+  color: rgb(152, 152, 152);
+}
+.inpCode .unlock{
+   width: 596rpx;
+  height: 94rpx;
+  background: rgb(0,177,197);
+  border-radius: 46rpx;
+  color: #fff;
+  font-size: 36rpx;
+  box-shadow: 0 16rpx 8rpx 2rpx rgba(37,215,204,0.09);
+}
+.InvitationCode{
+  width: 596rpx;
+  height: 90rpx;
+  border: 4rpx solid rgb(0,177,197);
+  border-radius: 46rpx;
+  margin: 38rpx auto 28rpx auto;
+}

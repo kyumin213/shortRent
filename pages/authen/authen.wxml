@@ -1,0 +1,61 @@
+<!--pages/authen/authen.wxml-->
+<view class='bg-c'>
+  <view wx:if="{{hashList}}">
+    <view class='ts-text'>
+      <text>您的照片仅用于审核，我们将为您严格保密</text>
+    </view>
+    <view class='positive'>
+      <view class='posiImg'  bindtap='uploadPosi' data-id="tempFilePaths_front">
+        <image src='{{tempFilePaths_front}}' class='posi'></image>
+        <view class='upload'>
+          <image src='../../image/sfrz2x.png' class='uplodImg' mode='widthFix'></image>
+        </view>
+      </view>
+
+    </view>
+    <view class='txt'>
+      <text class='color'>身份证<text class='fonzCol'>正面</text>拍摄</text>
+    </view>
+    <view class='positive'>
+      <view class='posiImg' bindtap='uploadPosi' data-id="tempFilePaths_back">
+        <image src='{{tempFilePaths_back}}' class='posi'></image>
+        <view class='upload'>
+          <image src='../../image/sfrz2x.png' class='uplodImg' mode='widthFix'></image>
+        </view>
+      </view>
+
+    </view>
+    <view class='txt'>
+      <text class='color'>身份证<text class='fonzCol'>背面</text>拍摄</text>
+    </view>
+    <view class='submit'>
+      <button class='subBtn' bindtap='submit'>提交</button>
+    </view>
+  </view>
+  <!--认证成功  -->
+  <view wx:else>
+    <view class='success'>
+      <view class='con'>
+        <view class='successImg'>
+          <image src='../../image/success.png' class="{{success?'show':'hidden'}} successIcn"></image>
+          <image src='../../image/fail.png' class="{{success?'hidden':'show'}} successIcn"></image>
+        </view>
+        <view class="{{success?'show':'hidden'}} fonzCol successTxt">
+          <text>认证成功</text>
+        </view>
+        <view class='fonzCol successTxt'>
+          <text class="{{success?'hidden':'show'}}">认证失败</text>
+        </view>
+        <view class="{{success?'show':'hidden'}} canTxt">
+          <text>恭喜您，完成了身份认证</text>
+        </view>
+        <view class="{{success?'hidden':'show'}} canTxt">
+          <text>请返回认证页面重新认证</text>
+        </view>
+      </view>
+    </view>
+    <view class='back'>
+      <button class='backBtn' bindtap='backBtn'>返回</button>
+    </view>
+  </view>
+</view>

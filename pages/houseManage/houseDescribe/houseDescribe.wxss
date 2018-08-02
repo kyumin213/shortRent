@@ -1,0 +1,51 @@
+/* pages/houseManage/houseDescribe/houseDescribe.wxss */
+.bg-c{
+  background: rgb(242, 242, 242);
+}
+.desCenter{
+  background: #fff;
+  padding: 50rpx 32rpx;
+  margin-top: 24rpx;
+}
+.desTitle{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90rpx;
+  border-bottom: 2rpx solid rgb(201, 201, 201);
+}
+.desTitle .hx{
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.desTitle .sl{
+  font-size: 26rpx;
+}
+.desTitle .wordCount{
+  font-size: 26rpx;
+}
+.desCon{
+  padding: 30rpx 0;
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 56rpx;
+}
+.textarea-placeholder{
+  line-height: 56rpx;
+}
+.desSubmit{
+  position: fixed;
+  bottom: 36rpx;
+  left: 50%;
+  width: 596rpx;
+  margin-left: -298rpx;
+}
+.desSubmit .preBtn{
+  border-radius: 44rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: rgb(0, 177, 197);
+  font-size: 36rpx;
+  color: #fff;
+  box-shadow: 0 18rpx 8rpx 2rpx rgba(37,215,204,0.09);
+}

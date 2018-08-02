@@ -1,0 +1,56 @@
+<!--pages/confirmIn/confirmIn.wxml-->
+<view class='bg-c'>
+  <form bindsubmit='precheckIn'>
+    <view class='cusName'>
+      <view class='fonzCol fz'>
+        <text>姓名</text>
+      </view>
+      <view class='color NameValue'>
+        <text>{{names}}</text>
+      </view>
+    </view>
+    <view class='cusName'>
+      <view class='fonzCol fz'>
+        <text>身份证号码</text>
+      </view>
+      <view class='color NameValue'>
+        <text>{{cardId}}</text>
+      </view>
+    </view>
+    <view class='inTimes'>
+      <view class='checkInTime'>
+        <text class='fonzCol fz'>入住时间</text>
+        <view>
+          <!-- <picker mode="date" value="{{startDate}}" end="{{endTime}}" bindchange="bindDateChange"> -->
+          <text class='fonzCol fz-26'> {{checkInTime}}</text>
+          <text class='jt'></text>
+          <!-- </picker> -->
+        </view>
+
+      </view>
+      <view class='checkInTime'>
+        <text class='fonzCol fz'>结束时间</text>
+        <view>
+          <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" class='endTime' bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+            <view>
+              <input class='fonzCol fz-26' name="endTime" value="{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}"></input>
+            </view>
+            <!-- <text class='jt'></text> -->
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!-- <view class='week'>
+    <text class="{{one?'active':''}} items" bindtap='one'>一</text>
+    <text class="{{two?'active':''}} items" bindtap='two'>二</text>
+    <text class="{{three?'active':''}} items" bindtap='three'>三</text>
+    <text class='items'>四</text>
+    <text class='items'>五</text>
+    <text class='items'>六</text>
+    <text class='items'>七</text>
+  </view> -->
+    <view class='weekSubmit'>
+      <button class='weeksubBtn' form-type='submit'>保存</button>
+    </view>
+  </form>
+</view>

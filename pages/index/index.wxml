@@ -1,0 +1,31 @@
+<!--pages/index/index.wxml-->
+<view>
+  <view class='recom'>
+    <text>今日推荐</text>
+  </view>
+  <view class='banner'>
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}" indicator-color='#fff' indicator-active-color='rgb(111,255,246)' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block>
+        <swiper-item>
+          <image mode='widthFix' class='silde-imgage' src="../../image/index/banner.png"></image>
+        </swiper-item>
+        <swiper-item>
+          <image mode='widthFix' class='silde-imgage' src="../../image/index/banner2.png"></image>
+        </swiper-item>
+        <swiper-item>
+          <image mode='widthFix' class='silde-imgage' src="../../image/index/banner3.png"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="open-btn" bindtap='submitUnlock' wx:if="{{displayOpen}}">
+    <image class='open-icon' src='../../image/index/点击开锁-默认状态@2x.png' mode='widthFix'></image>
+  </view>
+  <view class="inpCode" wx:if="{{displayCheck}}">
+    <form bindsubmit='applyUnlock'>
+      <text class='ts'>温馨提示： 若输错邀请码，将无法打开门锁</text>
+      <input class='InvitationCode' placeholder='请输入邀请码' value="{{inviteCode}}" name="inviteCode"></input>
+      <button class='unlock' form-type='submit'>申请开锁</button>
+    </form>
+  </view>
+</view>

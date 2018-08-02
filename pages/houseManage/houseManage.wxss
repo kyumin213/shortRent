@@ -1,0 +1,154 @@
+/* pages/houseManage/houseManage.wxss */
+.bg-c{
+  background: rgb(237,237,237);
+}
+.house-imgs {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 140rpx 0 80rpx 0;
+}
+
+.house-icon {
+  width: 374rpx;
+}
+
+.house-text {
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  color: rgb(121, 121, 121);
+  margin-top: 30rpx;
+}
+
+
+
+.no-text {
+  font-size: 36rpx;
+}
+
+.add-house {
+  padding: 115rpx 0 115rpx 0;
+}
+
+.add-btn {
+  width: 80%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: rgb(0, 177, 197);
+  border-radius: 50rpx;
+  border: none;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+/*有房间时  */
+
+.houseItems {
+  background: #fff;
+  margin: 20rpx 0;
+  padding: 26rpx 34rpx 0 34rpx;
+  font-size: 24rpx;
+  color: rgb(51, 51, 51);
+}
+
+.houseItems .houseTitle {
+  font-size: 32rpx;
+  color: rgb(0, 177, 197);
+  height: 50rpx;
+  border-bottom: 2rpx solid rgb(245, 245, 245);
+  font-family: PingFang-SC-Bold;
+}
+.houseItems .houseIcon{
+  width: 36rpx;
+  height: 30rpx;
+  background-size: cover;
+  margin-right: 14rpx;
+}
+
+.houseItems .items {
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 2rpx solid rgb(245, 245, 245);
+}
+.houseItems .items text:nth-child(2),.endTime{
+  color: rgb(102,102,102);
+  font-size: 26rpx;
+}
+
+.houseItems .itemBtn {
+  height: 92rpx;
+  line-height: 92rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.houseItems .itemBtn .rightBtn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.houseItems .itemBtn .del, .houseItems .itemBtn .viewHouse {
+  padding: 0; 
+  margin: 0;
+  display: inline-block;
+  width: 136rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 20rpx; 
+  font-size: 24rpx;
+  box-sizing: content-box;
+  border: 2rpx solid #000;
+  background-color: #fff;
+}
+
+.houseItems .itemBtn .viewHouse {
+  margin-left: 10rpx;
+  color: rgb(9, 187, 197);
+  border: 2rpx solid #00b1c5;
+}
+
+.houseItems .rightBtn .btnItems {
+  display: inline-block;
+}
+
+.houseItems .rightBtn .hidden {
+  display: none;
+}
+.addHouse{
+  position: fixed;
+  bottom: 36rpx;
+  left: 50%;
+  width: 146rpx;
+  height: 146rpx;
+  margin-left: -73rpx;
+  border-radius: 100%;
+  background: rgb(0, 177, 197);
+  text-align: center;
+  box-shadow: 2rpx 24rpx 20rpx 6rpx rgba(0,164,173,0.18);
+}
+.addHouse .add{
+  display: inline-block;
+  width: 58rpx;
+  height: 10rpx;
+  background: #fff;
+  margin-top: 70rpx;
+  position: relative;
+  border-radius: 8rpx;
+}
+.addHouse .add::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 58rpx;
+  height: 10rpx;
+  background: #fff;
+  transform: rotate(90deg);
+  border-radius: 8rpx;
+}

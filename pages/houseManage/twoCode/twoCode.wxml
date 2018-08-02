@@ -1,0 +1,36 @@
+<!--pages/houseManage/twoCode/twoCode.wxml-->
+<view class='bg-c'>
+  <view class='codeCenter'>
+    <view class='codeHead'>
+      <view class='fonzCol houseName'>宝珠花园</view>
+      <view class='color houseNo'>智能公寓2号1025房间</view>
+      <view class='ewm'>
+        <image class='codeImg' mode='widthFix' src='{{QR_codeBase64}}'></image>
+      </view>
+    </view>
+    <view></view>
+  </view>
+  <form>
+
+    <view class='phone'>
+      <view class='items'>
+        <view class='itemLeft'>
+          <image src='../../../image/me/write.png' mode='widthFix' class='writeIcon'></image>
+        </view>
+        <view class='phontTxt'>
+          <text class='fonzCol'>智能房客手机号码输入</text>
+          <text class='sl'>示例</text>
+        </view>
+      </view>
+      <view class='tel'>
+        <textarea bindinput='inpPhone' value='{{phones}}' bindblur='isphone' class='fillPhone' placeholder-class='col' placeholder='请输入手机号码智能开锁，如需输入多个号码，请用英文逗号分开 例：13600000000,13800000000,13200000000'></textarea>
+      </view>
+    </view>
+    <view class='fonzCol houseCode'>
+      房间邀请码{{houseInviteCodeNumber}}
+    </view>
+    <view>
+      <button class='sendCus' bindtap='saveSearch'>发送给二维码给房客</button>
+    </view>
+  </form>
+</view>
