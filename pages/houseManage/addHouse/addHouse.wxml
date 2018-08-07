@@ -29,9 +29,9 @@
       <button class='nextBtn' formType="submit">下一步</button>
     </view>
   </form>
-  <view class='section-map'>
+  <!-- <view class='section-map'>
     <map id="myMap" style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" show-location></map>
-  </view>
+  </view> -->
   <!--小区  -->
   <view animation="{{animationData}}" class="modal" wx:if="{{areaStatus}}">
     <form bindsubmit="preDetails" class='modalShow'>

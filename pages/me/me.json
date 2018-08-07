@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "我的"
+  "navigationBarTitleText": "个人中心",
+  "navigationBarTextStyle":"#fff",
+  "navigationBarBackgroundColor": "#03b5c2"
 }

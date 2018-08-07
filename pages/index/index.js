@@ -1,6 +1,7 @@
 // pages/index/index.js
 var that, index = 0
 var app = getApp().globalData
+
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
     openText: '',            //open 文字
     openRotate: 'rotate',    //open 旋转控制
     displayOpen: false,     //显示 open界面
-    displayCheck: true,    //显示 输入邀请码界面
+    displayCheck: false,    //显示 输入邀请码界面
     Length: 4,               //邀请码 长度
     isFocus: true,           //邀请码 聚焦
     invitationCode_ture: '', //邀请码 value - 真
@@ -46,7 +47,6 @@ Page({
     let loginData = wx.getStorageSync('loginData')
     let pkCode = loginData.userAccountPkcode
     var inviteCode = e.detail.value.inviteCode
-    console.log(inviteCode)
     wx.request({
       url: app.common_post_address + '/inInviteCode',
       data: {
@@ -282,19 +282,7 @@ function login() {
                 url: 'getPhoneNumber/getPhoneNumber'
               })
             }
-            // if (searchStatus == 1) {
-            //   that.setData({
-            //     searchStatus: true,
-            //     InvitationCode: false
-            //   })
-            // }
-            //  if(!searchStatus) {
-            //   that.setData({
-            //     InvitationCode: true,
-            //     searchStatus: false
-            //   })
-            // }
-            if (houseCheckInState == 0 || houseCheckInState == 1) {  //显示界面
+            if (houseCheckInState == 0) {  //显示界面
               that.setData({
                 openEvent: 'submitUnlock',
                 openText: 'OPEN',

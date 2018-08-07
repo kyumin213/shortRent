@@ -1,44 +1,30 @@
 /* pages/me/me.wxss */
 
-.bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-}
-
-.my-bg {
-  width: 100%;
-  /* background-size: cover; */
+.bg-c {
+  background: rgb(245, 245, 245);
 }
 
 .me-top {
-  position: absolute;
-  top: 0;
-  z-index: 999;
-  text-align: center;
   width: 100%;
-  margin: 30rpx auto;
-  padding: 50rpx 0;
+  background: rgb(3, 181, 194);
+  text-align: center;
   color: #fff;
+  margin-bottom: 12rpx;
 }
 
 .myHead {
-  margin: 0 auto;
+  padding-top: 40rpx;
 }
 
 .head-icon {
   width: 158rpx;
   height: 160rpx;
   border-radius: 100%;
-  /* width: 100%; */
 }
 
 .userName, .userId {
-  font-size: 28rpx;
+  font-size: 36rpx;
   display: block;
-  margin-top: 10rpx;
 }
 
 .me-tabs {
@@ -46,7 +32,6 @@
   align-items: center;
   justify-content: space-around;
   font-size: 30rpx;
-  /* height: 100rpx; */
   margin-top: 130rpx;
 }
 
@@ -54,76 +39,84 @@
   width: 44rpx;
   height: 42rpx;
   margin: 0 auto;
-   margin-bottom: 18rpx;
+  margin-bottom: 18rpx;
 }
 
-.me-tabs .txt {
-  font-size: 20rpx;
+.txt {
+  font-size: 22rpx;
+  margin-top: 8rpx;
 }
 
 .fd-icon, .kf-icon {
- 
   width: 100%;
 }
 
-
-.list-icon {
-  width: 40rpx;
-  height: 38rpx;
-  margin-right: 24rpx;
-}
-
-.lists {
-  margin-top: 95%;
-  line-height: 80rpx;
-  font-size: 32rpx;
+.listItem {
   width: 100%;
-  display: flex;
-  /* align-items: center; */
-  height: 320rpx;
-  justify-content: space-between;
-  padding: 0 100rpx;
+  background: #fff;
+  padding: 26rpx 66rpx;
   box-sizing: border-box;
 }
 
-.items {
+.lists {
+  font-size: 32rpx;
+  width: 100%;
   display: flex;
   align-items: center;
-  height: 80rpx;
-  font-size: 32rpx;
-  color: rgb(51,51,51);
+  justify-content: center;
 }
 
-.lists .switch {
-  margin-top: 10rpx;
+.lists .items {
+  width: 50%;
+  text-align: center;
+  height: 308rpx;
+  margin: 0 auto;
 }
 
-.lists .switchBtn {
-  width: 104rpx;
+.listItem .lists:first-child {
+  border-bottom: 2rpx solid rgb(245, 245, 245);
+}
+
+.lists .items:nth-child(2) {
+  border-left: 2rpx solid rgb(245, 245, 245);
+}
+
+.listItem .lists:first-child .items-Img {
+  margin-top: 110rpx;
+  width: 100%;
+}
+
+.listItem .lists:last-child .items-Img {
+  margin-top: 72rpx;
+}
+
+.list-icon {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.lists .list_txt {
+  color: rgb(51, 51, 51);
+  font-size: 24rpx;
+  margin-top: 40rpx;
+}
+
+.switch {
+  margin-top: 20rpx;
+  padding-bottom: 38rpx;
+}
+
+.switch .switchBtn {
+  width: 148rpx;
   height: 42rpx;
   border-radius: 22rpx;
-  background: rgb(5, 182, 197);
-  color: #fff;
+  background: #fff;
+  color: rgb(3, 181, 194);
   line-height: 42rpx;
   font-size: 26rpx;
-  padding: 0;
+  padding-bottom: 38rpx;
 }
 
-.serviceCenter {
-  font-size: 22rpx;
-}
-
-/*我是房客  */
-
-.fk-bg {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-.fkImg {
-  width: 100%;
+.switch .active {
+  background: rgb(212, 212, 212);
 }

@@ -1,20 +1,25 @@
 {
   "pages": [
     "pages/houseManage/houseManage",
-    "pages/houseManage/houseDetails/houseDetails",
+    "pages/houseManage/addHouse/addHouse",
+   
+    "pages/houseManage/houseDescribe/houseDescribe",
+  
+    
+    
+    
     "pages/me/me",
     
+    "pages/houseManage/houseDetails/houseDetails",
     "pages/index/index",
     "pages/houseManage/houseStatus/houseStatus",
-    "pages/houseManage/houseDescribe/houseDescribe",
+   
     "pages/houseManage/property/property",
     "pages/houseManage/recordIn/recordIn",
     "pages/confirmIn/confirmIn",
-    
     "pages/houseManage/twoCode/twoCode",
     "pages/houseManage/bindDevice/bindDevice",
     "pages/authen/authen",
-    "pages/houseManage/addHouse/addHouse",
     "pages/scanBind/scanBind",
     "pages/faceRecognition/faceRecognition",
     "pages/houseManage/openRecord/openRecord",
@@ -32,7 +37,7 @@
     "borderStyle": "#E5E5E5",
     "backgroundColor": "#fff",
     "color": "#ccc",
-    "selectedColor": "#000",
+    "selectedColor": "#05b6c5",
     "list": [
       {
         "pagePath": "pages/index/index",

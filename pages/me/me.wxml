@@ -1,64 +1,48 @@
 <!--pages/me/me.wxml-->
-<view>
-  <view class='bg'>
-    <image class="{{switchBtn?'hidden':'show'}} my-bg" src='../../image/me/myBg.png' mode='widthFix'></image>
-    <image class="{{switchBtn?'show':'hidden'}} fkImg" src='../../image/me/fk-bg.png' mode='widthFix'></image>
-  </view>
+<view class='bg-c'>
   <view class='me-top'>
     <view class='myHead'>
       <image class='head-icon' src='{{userInfo.avatarUrl}}' mode='widthFix'></image>
     </view>
-    <!-- <view> -->
-      <text class='userName'>{{userInfo.nickName}}</text>
-    <!-- </view> -->
-    <!-- <view> -->
-      <text class='userId'>{{phoneNumber}}</text>
-    <!-- </view> -->
-    <view class='me-tabs'>
-      <view class='me-left'>
-        <view class='icons'>
-          <image class='fd-icon' src='../../image/me/fd2x.png' mode='widthFix'></image>
-        </view>
-        <text class="{{switchBtn?'hidden':'show'}} txt">成为熹自租房东1天啦</text>
-        <text class="{{switchBtn?'show':'hidden'}} txt">成为熹自租房客1天啦</text>
-      </view>
-      <view class='me-right'>
-        <view class='icons'>
-          <image class='kf-icon' src='../../image/me/kf2x.png' mode='widthFix'></image>
-        </view>
-        <text  class="{{switchBtn?'show':'show'}} txt">客服中心</text>
-      </view>
+    <text class='userName'>{{userInfo.nickName}}</text>
+    <!-- <text class='userId'>{{phoneNumber}}</text> -->
+    <text class="{{switchBtn?'hidden':'show'}} txt">成为熹自租房东1天啦!</text>
+     <text class="{{switchBtn?'show':'hidden'}} txt">成为熹自租房客1天啦!</text>
+    <view class='switch'>
+      <button class="switchBtn {{switchBtn?'active':''}}" bindtap='switchCheck'>切换</button>
     </view>
   </view>
-  <view class='lists'>
-    <view>
-      <navigator class="{{switchBtn?'hidden':'show'}}">
-        <view class='items'>
+  <view class='listItem'>
+    <view class='lists'>
+      <navigator class='items'>
+        <view class='items-Img'>
           <image class='list-icon' src='../../image/me/fd-icon.png'></image>
-          <text>我是房东</text>
+        </view>
+        <view class='list_txt'>
+          <text class="{{switchBtn?'hidden':'show'}}">我的房东</text>
+          <text class="{{switchBtn?'show':'hidden'}}">我的房客</text>
         </view>
       </navigator>
-      <navigator class="{{switchBtn?'show':'hidden'}}">
-        <view class='items'>
-          <image class='list-icon' src='../../image/me/fd-icon.png'></image>
-          <text>我是房客</text>
-        </view>
-      </navigator>
-      <navigator url='../houseManage/twoCode/twoCode' hover-class='none'>
-        <view class='items'>
+      <navigator class='items' url='../houseManage/twoCode/twoCode' hover-class='none'>
+        <view class='items-Img'>
           <image class='list-icon' src='../../image/me/ewm.png'></image>
-          <text>发送二维码</text>
         </view>
-      </navigator>
-      <navigator url='../authen/authen' hover-class='none'>
-        <view class='items'>
-          <image class='list-icon' src='../../image/me/sfrz.png'></image>
-          <text>身份认证</text>
-        </view>
+        <view class='list_txt'>发送二维码</view>
       </navigator>
     </view>
-    <view class='switch'>
-      <button class='switchBtn' bindtap='switchCheck'>切换</button>
+    <view class='lists'>
+      <navigator class='items' url='../authen/authen' hover-class='none'>
+        <view class='items-Img'>
+          <image class='list-icon' src='../../image/me/sfrz.png'></image>
+        </view>
+        <view class='list_txt'>身份认证</view>
+      </navigator>
+      <navigator class='items' url='../houseManage/recordIn/recordIn' hover-class='none'>
+        <view class='items-Img'>
+          <image class='list-icon' src='../../image/me/inList.png'></image>
+        </view>
+        <view class='list_txt'>入住记录</view>
+      </navigator>
     </view>
   </view>
 </view>

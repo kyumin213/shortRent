@@ -41,19 +41,21 @@ Page({
     let that = this
     let houseData = wx.getStorageSync('houseData')
     let houseDetail = wx.getStorageSync('houseDetails')
-    console.log(houseDetail)
     let pkCode = wx.getStorageSync('loginData')
-    that.setData({
-      region: houseData.city,
-      street: houseData.street,
-      area: houseData.area,
-      xq: houseDetail.xq,
-      lh: houseDetail.lh,
-      dy: houseDetail.dy,
-      mp: houseDetail.mp
-      // housePkcode: options.housePkcode
+    if (houseData != '' || houseDetail!='' || pkCode!=''){
+      that.setData({
+        region: houseData.city,
+        street: houseData.street,
+        area: houseData.area,
+        xq: houseDetail.xq,
+        lh: houseDetail.lh,
+        dy: houseDetail.dy,
+        mp: houseDetail.mp
+        // housePkcode: options.housePkcode
 
-    })
+      })
+    }
+
   },
 
   houseAreaChange:function(){

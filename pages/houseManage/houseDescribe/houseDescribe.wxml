@@ -8,13 +8,13 @@
           <text class='fonzCol sl'>示例</text>
         </view>
         <view class='color wordCount'>
-          <text>{{des.des.length}}</text>
+          <text>{{desnums}}</text>
           <text>/</text>
           <text>200</text>
         </view>
       </view>
       <view>
-        <textarea class='color desCon' maxlength='200' value='{{des.des}}' name="des" 
+        <textarea class='color desCon' maxlength='200' bindinput='desNums' value='{{des}}' name="des" 
         placeholder="例如： 房间描述：房间属于简约风格、客厅有大阳台，采光极佳，夜晚可以欣赏到整个城市霓虹灯风光。地理位置：此房源位于深圳市中心，远远望去能看到深圳第一高楼-京基金融中心是第一个引人注目的高层地标建筑 。">
 
         </textarea>
