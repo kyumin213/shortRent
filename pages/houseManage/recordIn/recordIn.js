@@ -53,6 +53,7 @@ Page({
   CheckrecordInList: function () {
     var that = this
     var housePkcode = that.data.housePkcode
+    console.log(housePkcode)
     var userAccountPkcode = that.data.userAccountPkcode
     wx.request({
       url: app.common_post_address + '/house/findCheckInList',

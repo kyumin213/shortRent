@@ -6,29 +6,40 @@ Page({
    * 页面的初始数据
    */
   data: {
-    des: {},
-    desnums:''
+    des: '',
+    desnums:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    let complete = that.data.complete
-    let houseStatus = that.data.houseStatus
-    let describe = that.data.describe
-    let device = that.data.bindDevice
-    let des = wx.getStorageSync('houseDes')
+    var that = this
+    var housePkcode = options.housePkcode
+    var complete = that.data.complete
+    var houseStatus = that.data.houseStatus
+    var describe = that.data.describe
+    var device = that.data.bindDevice
+    var desData = wx.getStorageSync('houseDes')
+    console.log(desData)
+    if (desData != '' || desData != null || desData!=undefined){
+      that.setData({
+        des: desData.des,
+        desnums: desData.des.length,
+        housePkCode: housePkcode
+      })
+    }else{
+     that.setData({
+       desnums: 0
+     })
+    }
+  
     if (!complete || !houseStatus || !describe || device) {
       that.setData({
         com: false
       })
     }
-    that.setData({
-      des: des,
-      desnums:des.length
-    })
+
   },
 
   /**
@@ -40,54 +51,93 @@ Page({
   },
 
   preDescript: function (e) {
-    let des = e.detail.value
-    let houseArea = wx.getStorageSync('areaData')
-    let houseType = wx.getStorageSync('houseTypeData')
-    // let types=houseType.toString()
-    let houseData = wx.getStorageSync('houseData')
+    var that=this
+    var des = e.detail.value
+    var houseArea = wx.getStorageSync('areaData')
+    var houseType = wx.getStorageSync('houseTypeData')
+    var houseData = wx.getStorageSync('houseData')
     var city = houseData.city
     var street = houseData.street
-    var area = houseData.area
+    var area = houseData.detailInfo
     var address = city + street + area
     let houseDetail = wx.getStorageSync('houseDetails')
     let houseDes = wx.getStorageSync('houseDes') || {}
     wx.setStorageSync('houseDes', des)
     let loginData = wx.getStorageSync('loginData')
-
-    wx.request({
-      url: app.common_post_address + 'house/save',
-      data: {
-        userAccountPkcode: loginData.userAccountPkcode,
-        houseCommunityName: houseDetail.xq,
-        houseNumberL: houseDetail.mp,
-        houseDescribe: houseDes.des,
-        houseAcreage: houseArea.houseArea,
-        housePeopleNumber: houseArea.people,
-        houseType: JSON.stringify(houseType),
-        houseToilet: 2,
-        houseBedNumber: 1,
-        houseAddress: address
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      method: 'POST',
-      success: function (res) {
-        console.log(res.data)
-        let result = res.data
-        if (result.success == "200") {
-          let that = this
-          app.showToast('添加成功', 'success', 1000)
-          wx.navigateTo({
-            url: '../houseDetails/houseDetails',
-          })
-        } else {
-          console.log(res.data.message)
+    var housePkCode = that.data.housePkCode
+    if (housePkCode == '' || housePkCode == null || housePkCode==undefined){
+      wx.request({
+        url: app.common_post_address + 'house/save',
+        data: {
+          userAccountPkcode: loginData.userAccountPkcode,
+          houseCommunityName: houseData.detailInfo,
+          houseNumberL: houseDetail.mp,
+          houseDescribe: houseDes.des,
+          houseAcreage: houseArea.houseArea,
+          housePeopleNumber: houseArea.people,
+          houseType: JSON.stringify(houseType),
+          houseToilet: 2,
+          houseBedNumber: 1,
+          houseAddress: address
+        },
+        header: {
+          'content-type': 'application/json'
+        },
+        method: 'POST',
+        success: function (res) {
+          let result = res.data
+          if (result.success == "200") {
+            let that = this
+            app.showToast('添加成功', 'success', 1000)
+            wx.removeStorage('houseDes')
+            wx.navigateTo({
+              url: '../houseDetails/houseDetails',
+            })
+          } else {
+            console.log(res.data.message)
+          }
+        }, fail: function () {
+          app.showToast('添加失败，请重试！', 'none', 1000)
         }
-      }, fail: function () {
-        app.showToast('添加失败，请重试！', 'none', 1000)
-      }
-    })
+      })
+    }else{
+      wx.request({
+        url: app.common_post_address + 'house/update',
+        data: {
+          userAccountPkcode: loginData.userAccountPkcode,
+          houseCommunityName: houseData.detailInfo,
+          houseNumberL: houseDetail.mp,
+          houseDescribe: houseDes.des,
+          houseAcreage: houseArea.houseArea,
+          housePeopleNumber: houseArea.people,
+          houseType: JSON.stringify(houseType),
+          houseToilet: 2,
+          houseBedNumber: 1,
+          houseAddress: address,
+          housePkcode: housePkCode
+        },
+        header: {
+          'content-type': 'application/json'
+        },
+        method: 'POST',
+        success:function(res){
+          let result = res.data
+          if (result.success == "200") {
+            let that = this
+            app.showToast('添加成功', 'success', 1000)
+            wx.removeStorage('houseDes')
+            wx.navigateTo({
+              url: '../houseDetails/houseDetails',
+            })
+          } else {
+            console.log(res.data.message)
+          }
+        }, fail: function () {
+          app.showToast('添加失败，请重试！', 'none', 1000)
+        }
+      })
+    }
+
   },
 
   /**

@@ -1,0 +1,30 @@
+<!--pages/blueTooth/blueTooth.wxml-->
+<!-- <button bindtap='readble'>读取</button>
+<button bindtap='writeble'>写入</button>
+<button bindtap='cleanDevice'>解绑设备</button>
+<button bindtap='bindDevice'>绑定设备</button>
+<button bindtap='confCommunCmd'>设置通讯密码</button>
+<button bindtap='endBind'>结束绑定</button>
+<button bindtap='vailCommun'>验证绑定</button> -->
+<view class='bg-c'>
+  <view class='center'>
+    <view class="{{blueTooth!=''?'hei':''}}">{{blueTooth}}</view>
+    <view class="{{lianji!=''?'hei':''}}">{{lianji}}<text class='fg'></text></view>
+    <view class="{{startBind!=''?'hei':''}}">{{startBind}}<text class='fg'></text></view>
+    <view class="{{setPwd!=''?'hei':''}}">{{setPwd}}<text class='fg'></text></view>
+    <view class="{{endBind!=''?'hei':''}}">{{endBind}}<text class='fg'></text></view>
+    <view class="{{vailPwd!=''?'hei':''}}">{{vailPwd}}<text class='fg'></text></view>
+    <view class="{{openDoor!=''?'hei':''}}">{{openDoor}}<text class='fg'></text></view>
+  </view>
+  <!-- <view class='center'>
+    <view class="hei">{{blueTooth}}1
+    <text class='fg'></text>
+    </view>
+    <view class="hei">{{lianji}}2</view>
+    <view class="hei">{{startBind}}3</view>
+    <view class="hei">{{setPwd}}4</view>
+    <view class="hei">{{endBind}}5</view>
+    <view class="hei">{{vailPwd}}6</view>
+    <view class="hei">{{openDoor}}7</view>
+  </view> -->
+</view>

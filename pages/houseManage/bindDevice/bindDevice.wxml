@@ -47,8 +47,11 @@
         
       </view>
     </view> -->
-    <view class='scan' wx:if="{{deviceid==null}}">
+    <view class='scan' wx:if="{{deviceid!=null}}">
       <button class='scanBtn' form-type='submit'>绑定</button>
+    </view>
+    <view class='scan' wx:if="{{bind}}">
+      <button class='scanBtn' bindtap='unbindDevice'>解除绑定</button>
     </view>
   </form>
 </view>

@@ -16,20 +16,29 @@ Page({
     gwc: 0,
     // Types:[{ws:'1',kt:'1',cf:'1',dwc:'1',gwc:'1'}],
     houseType: {},
-    houseArea:''
+    houseArea: '',
+    houseSta: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let value=wx.getStorageSync('areaData')
-    let houseType=wx.getStorageSync('houseTypeData')
-    this.setData({
-      houseArea:value.houseArea,
-      peoples:value.people,
-      houseType: houseType
-    })
+    var value = wx.getStorageSync('areaData')
+    var houseTypeData = wx.getStorageSync('houseTypeData')
+    var housePeople = wx.getStorageSync('housePeople')
+    if (houseTypeData != '' || houseTypeData != null || houseTypeData != undefined || houseTypeData) {
+      this.setData({
+        houseArea: value.houseArea,
+        peoples: value.peoples,
+        houseType: houseTypeData
+      })
+    }
+    if (!houseTypeData || !value) {
+      this.setData({
+        peoples: 1
+      })
+    }
   },
 
   /**
@@ -45,16 +54,18 @@ Page({
   onShow: function () {
 
   },
-  closeModal: function () {
+  closeModal: function (e) {
+    var data=e.detail.value
     this.setData({
-      doorStatus:false
+      doorStatus: false
     })
+    var houseTypeData = wx.getStorageSync('houseTypeData') || {}
+    wx.setStorageSync('houseTypeData', data)
   },
   // 保存
 
   preserve: function (e) {
-    let data=e.detail.value
-    console.log(data)
+    let data = e.detail.value
     var areaData = wx.getStorageSync('areaData') || {}
     wx.setStorageSync('areaData', data)
     wx.navigateTo({
@@ -65,13 +76,12 @@ Page({
    * 数量减
    */
   bindMinus: function (e) {
-    // const index = e.currentTarget.dataset.index;
-    // const obj = e.currentTarget.dataset.obj;
-    let ws = this.data.ws;
-    if (ws <= 1) {
+    let that = this
+    let ws = that.data.ws;
+    if (ws <= 0) {
       return false;
     }
-    ws = ws - 1;
+    ws--
     this.setData({
       ws: ws
     });
@@ -80,36 +90,37 @@ Page({
    * 数量加
    */
   bindPlus: function (e) {
-    let ws = this.data.ws
+    let that = this
+    let ws = that.data.ws
     ws++
     this.setData({
       ws: ws
     })
   },
   // 客厅加减
-  ktPlus:function(){
-    let that=this
-    let kt=this.data.kt
+  ktPlus: function () {
+    let that = this
+    let kt = that.data.kt
     kt++
     that.setData({
-      kt:kt
+      kt: kt
     })
   },
-  ktMinus:function(){
-    let that=this
-    let kt=this.data.kt
-    if(kt<=1){
+  ktMinus: function () {
+    let that = this
+    let kt = that.data.kt
+    if (kt <= 1) {
       return false
     }
     kt--
     that.setData({
-      kt:kt
+      kt: kt
     })
   },
   // 厨房加减
   cfPlus: function () {
     let that = this
-    let cf = this.data.cf
+    let cf = that.data.cf
     cf++
     that.setData({
       cf: cf
@@ -117,8 +128,8 @@ Page({
   },
   cfMinus: function () {
     let that = this
-    let cf = this.data.cf
-    if (cf <= 1) {
+    let cf = that.data.cf
+    if (cf <= 0) {
       return false
     }
     cf--
@@ -129,7 +140,7 @@ Page({
   // 公共卫生间加减
   gwcPlus: function () {
     let that = this
-    let gwc = this.data.gwc
+    let gwc = that.data.gwc
     gwc++
     that.setData({
       gwc: gwc
@@ -137,8 +148,8 @@ Page({
   },
   gwcMinus: function () {
     let that = this
-    let gwc = this.data.gwc
-    if (gwc <= 1) {
+    let gwc = that.data.gwc
+    if (gwc <= 0) {
       return false
     }
     gwc--
@@ -148,8 +159,8 @@ Page({
   },
   // 独立卫生间加减
   dwcPlus: function () {
-    let that = this
-    let dwc = this.data.dwc
+    var that = this
+    var dwc = that.data.dwc
     dwc++
     that.setData({
       dwc: dwc
@@ -157,8 +168,8 @@ Page({
   },
   dwcMinus: function () {
     let that = this
-    let dwc = this.data.dwc
-    if (dwc <= 1) {
+    let dwc = that.data.dwc
+    if (dwc <= 0) {
       return false
     }
     dwc--
@@ -167,18 +178,24 @@ Page({
     })
   },
   peoplePlus: function (e) {
-    let people = this.data.peoples
+    var that = this
+    var people = that.data.peoples
     people++
-    this.setData({
+    that.setData({
       peoples: people
-    });
+    })
+    var data = e.currentTarget.dataset.people
+    console.log(data)
+    var houseTypeData = wx.getStorageSync('housePeople') || {}
+    wx.setStorageSync('housePeople', data)
+
   },
   peopleMinus: function (e) {
-    let people = this.data.peoples
+    var people = this.data.peoples
     if (people <= 1) {
       return false;
     }
-    people = people - 1
+    people--
     this.setData({
       peoples: people
     });
@@ -188,13 +205,13 @@ Page({
     //提交 e.detail。v
     // 关闭进来 一定没有 e.detail。v
     var currentStatu = e.currentTarget.dataset.statu
-    let data=e.detail.value
+    let data = e.detail.value
     this.setData({
       houseType: e.detail.value,
       doorStatus: false
     })
     var houseTypeData = wx.getStorageSync('houseTypeData') || {}
-    wx.setStorageSync('houseTypeData',data)
+    wx.setStorageSync('houseTypeData', data)
     this.util(currentStatu)
   },
   util: function (currentStatu) {

@@ -29,6 +29,14 @@ button::after{
 .fonzCol{
   color: rgb(0, 177, 197);
 }
+
+.fontW{
+  font-weight: bold;
+}
+.fz{
+  font-size: 32rpx;
+  color: #333;
+}
 /*弹出框  */
 .modal{
   position: fixed;
@@ -44,8 +52,8 @@ button::after{
 
 .modal .showModal{
   position: absolute;
-  left: 7%;
-  width: 86%;
+  left: 10%;
+  width: 80%;
   background: #fff;
   border-radius: 10rpx;
   margin: 20% auto;
@@ -91,12 +99,12 @@ button::after{
 }
 .modal .showModal label{
   font-size: 32rpx;
-  color: rgb(102, 102, 102);
+  color: #333;
 }
-.modal .showModal .items{
+/* .modal .showModal .items{
   margin-top: 32rpx;
   padding-bottom: 10rpx;
-}
+} */
 .modal .showModal .items:nth-child(3){
   border-bottom: 2rpx solid #ccc;
 }
@@ -109,7 +117,7 @@ button::after{
   line-height: 120rpx;
   background: #fff;
   font-size: 32rpx;
-  color: rgb(51, 51, 51);
+  color:#333;
 }
 .show{
   display: block;

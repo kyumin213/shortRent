@@ -24,11 +24,12 @@ Page({
     houseDetails: {},
     userAccountPkcode: '',
     housePkid: '',
-    checkIn: false,
+    checkIn: true,
     checkArray: {},
     device:{},
+    details: {},
     index: '',
-    bindHouse:false
+    bindHouse:true
 
   },
 
@@ -73,6 +74,7 @@ Page({
             houseDetails: details,
             housePkid: details.housePkid,
             checkArray: checkArray,
+            details: details,
             device: device
           })
           if (details.houseAddress != '') {
@@ -233,17 +235,20 @@ Page({
    * 设备绑定
    */
   bindDevice: function (e) {
+    var that=this
     var housePkcode = this.data.housePkcode
+    var bindStatus = that.data.bindDevice
     wx.navigateTo({
-      url: '../bindDevice/bindDevice?housePkcode=' + housePkcode,
+      url: '../bindDevice/bindDevice?housePkcode=' + housePkcode + '&bindStatus=' + bindStatus,
     })
   },
   /**
    * 房屋描述
    */
-  houseDes: function () {
+  houseDes: function (e) {
+    var housePkcode = this.data.housePkcode
     wx.navigateTo({
-      url: '../houseDescribe/houseDescribe',
+      url: '../houseDescribe/houseDescribe?housePkcode=' + housePkcode,
     })
   },
   /**
@@ -269,10 +274,12 @@ Page({
  * 发送二维码
  */
   sendCode: function (e) {
-    var housePkcode = this.data.housePkcode
-    var userAccountPkcode = this.data.userAccountPkcode
+    var that=this
+    var housePkcode = that.data.housePkcode
+    var userAccountPkcode = that.data.userAccountPkcode
+    var houseName = that.data.houseName
     wx.navigateTo({
-      url: '../twoCode/twoCode?housePkcode=' + housePkcode,
+      url: '../twoCode/twoCode?housePkcode=' + housePkcode + '&houseName=' + houseName,
     })
   },
   /**
@@ -283,9 +290,13 @@ Page({
     var that = this
     var housePkcode = that.data.housePkcode
     var index = that.data.index
-    console.log(index)
+    // console.log(index)
+
     var userList = that.data.checkArray
     var userCode = userList[index].userAccountPkcode
+    var names = userList[index].houseCheckInName
+    console.log(names)
+    var cardId = userList[index].houseCheckInIdnumber
     if (userList == '' && userList == null) {
       wx.showToast({
         title: '信息未完善',
@@ -293,9 +304,8 @@ Page({
         duration: 1000
       })
     } else {
-
       wx.navigateTo({
-        url: '../recordIn/recordIn?housePkcode=' + housePkcode + '&userCode=' + userCode,
+        url: '../../confirmIn/confirmIn?housePkcode=' + housePkcode + '&userCode=' + userCode + '&cardId=' + cardId + '&names=' + names,
       })
     }
 
@@ -327,6 +337,72 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that=this
+    let houseData = wx.getStorageSync('houseData')
+    let houseDetail = wx.getStorageSync('houseDetails')
+    let pkCode = wx.getStorageSync('loginData')
+    let userAccountPkcode = pkCode.userAccountPkcode
+    var housePkcode = that.data.housePkcode
+    wx.request({
+      url: app.common_post_address + 'house/findObj',
+      data: {
+        userAccountPkcode: userAccountPkcode,
+        housePkcode: housePkcode
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      method: 'POST',
+      success: function (res) {
+        let result = res.data
+        var details = result.data.houseInfo
+        var checkArray = result.data.checkArray
+        var device = result.data.platformDeviceArray
+        var houseData = details.houseType
+        var complete = that.data.complete
+        if (result.success == '200') {
+          that.setData({
+            houseDetails: details,
+            housePkid: details.housePkid,
+            checkArray: checkArray,
+            device: device,
+            houseName: details.houseCommunityName,
+            details: details
+          })
+          if (details.houseAddress != '') {
+            that.setData({
+              address: true
+            })
+          }
+          if (details.houseDescribe != '') {
+            that.setData({
+              describe: true
+            })
+          }
+          if (houseData.ws != '' && houseData.kt != '' && houseData.cf != '' && houseData.dwc != '' && houseData.gwc != '') {
+            that.setData({
+              houseStatus: true
+            })
+          }
+          if (device.length != 0) {
+            that.setData({
+              bindDevice: true
+            })
+          }
+          if (details.housePocImg != '') {
+            that.setData({
+              property: true
+            })
+          }
+          if (details.houseAddress != '' && details.houseDescribe != '' && houseData.ws != '' && houseData.kt != '' && houseData.cf != '' && houseData.dwc != '' && houseData.gwc != '' && device.length != 0 && details.housePocImg != '' && complete) {
+            that.setData({
+              com: true
+            })
+          }
+
+        }
+      }
+    })
   },
 
   /**

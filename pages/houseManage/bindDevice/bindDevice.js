@@ -13,6 +13,7 @@ Page({
     houseid: undefined,
     deviceid: undefined,
     userPkcode:'',
+    devicePkcode: '',
     deviceData:{},
   },
 
@@ -20,11 +21,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var bindStatus = options.bindStatus
     var that=this
     that.setData({
-      houseid: options.housePkcode
+      houseid: options.housePkcode,
     })
-    this.loadFindDevice()
+    if (bindStatus){
+      this.loadFindDevice()
+      that.setData({
+        bind:true
+      })
+    }else {
+      that.setData({
+        bind: false
+      })
+    }
+   
   },
 
   /**
@@ -53,7 +65,7 @@ Page({
       url: app.common_post_address+"/device/findObj",
       data: {
         houseid: housePkcode,
-        userAccountPkcode: userAccountPkcode,
+        userAccountPkcode: userAccountPkcode
       },
       
       method: "POST",
@@ -62,7 +74,8 @@ Page({
         if (result.success == "200") {
           that.setData({
             deviceid: result.data.platformDeviceSn,
-            deviceName: result.data.platformDeviceName
+            deviceName: result.data.platformDeviceName,
+            devicePkcode: result.data.platformDevicePkcode
           })
           if(result.data!=''){
             that.setData({
@@ -85,7 +98,7 @@ Page({
     var that=this
     let pkCode = wx.getStorageSync('loginData')
     var userAccountPkcode = pkCode.userAccountPkcode
-    console.log(userAccountPkcode)
+    // console.log(userAccountPkcode)
     var platformDeviceName = e.detail.value.deviceName
     var deviceSn = e.detail.value.series
     that.setData({
@@ -118,7 +131,54 @@ Page({
       }
     })
   },
+  /**
+   * 解绑设备
+   */
+  unbindDevice: function (e) {
+    var that = this
+    let pkCode = wx.getStorageSync('loginData')
+    var userAccountPkcode = pkCode.userAccountPkcode
+    // console.log(userAccountPkcode)
+    // var deviceSn = e.detail.value.series
+    // that.setData({
+    //   deviceid: deviceSn
+    // })
+    var platformDevicePkcode = that.data.devicePkcode
 
+    var housePkcode = that.data.houseid
+
+    wx.request({
+      url: app.common_post_address + "/device/untied",
+      data: {
+        platformDevicePkcode: platformDevicePkcode,
+        userAccountPkcode: userAccountPkcode,
+        housePkcode: housePkcode
+      },
+      method: "POST",
+      success: function (rs) {
+        var result = rs.data;
+        if (result.success == "200") {
+          wx.showToast({
+            title: '解绑成功',
+            icon:"success",
+            duration: 2000
+          })
+          wx.navigateTo({
+            url: '../houseDetails/houseDetails',
+          })
+
+          //成功
+        } else {
+          //失败 result.message
+          wx.showToast({
+            title: '解绑失败',
+            icon: "none",
+            duration: 2000
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

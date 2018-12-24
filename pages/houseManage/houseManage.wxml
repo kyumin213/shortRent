@@ -5,11 +5,11 @@
       <view class='houseItems' data-index="{{index}}" data-id="{{index}}">
         <view class='houseTitle'>
           <image class='houseIcon' src='{{houseIcon}}' mode='widthFix'></image>
-          <text>{{item.houseCommunityName}}</text>
+          <text class='fontW'>{{item.houseCommunityName}}</text>
         </view>
         <view class='items'>
           <text>房屋状态：</text>
-          <text>已入住</text>
+          <text>未入住</text>
         </view>
         <view class='items'>
           <text>房屋户型：</text>
@@ -35,8 +35,8 @@
         </view>
       </view>
     </view>
-    <view class='addHouse'>
-       <text class='add' bindtap='addHouse'></text> 
+    <view class='addHouse'  bindtap='addHouse'>
+       <text class='add'></text> 
     </view>
   </view>
   <view wx:else>

@@ -1,0 +1,11 @@
+<!--pages/ble/ble.wxml-->
+<button bindtap='readble'>读取</button>
+<button bindtap='writeble'>写入</button>
+<button bindtap='cleanDevice'>解绑设备</button>
+<button bindtap='bindDevice'>绑定设备</button>
+<button bindtap='confCommunCmd'>设置通讯密码</button>
+<button bindtap='endBind'>结束绑定</button>
+<button bindtap='vailCommun'>验证绑定</button>
+<view>
+<view>{{mesShow}}</view>
+</view>

@@ -3,12 +3,13 @@
   <form bindsubmit='preserve'>
     <view class='houseItems'>
       <view>
-        <text class='textOne'>房屋状态</text>
+        <text class='fontW textOne'>房屋状态</text>
         <text class='color'>用于显示房屋的状态</text>
       </view>
       <view class='houseRight'>
-        <text class='txtCol'>已入住</text>
-        <view class='complete'>
+        <text class="{{houseSta?'show':'hidden'}} txtCol">已入住</text>
+        <text class="{{houseSta?'hidden':'show'}} txtCol">未入住</text>
+        <view class="{{houseSta?'show':'hidden'}} complete">
           <text class='complete-icon'></text>
         </view>
         <text class='jt'></text>
@@ -16,7 +17,7 @@
     </view>
     <view class='houseItems'>
       <view>
-        <text class='textOne'>房屋面积</text>
+        <text class='fontW textOne'>房屋面积</text>
         <text class='color'>用于显示房源的面积</text>
       </view>
       <view class='place'>
@@ -27,7 +28,7 @@
     <view class='DoorDetails'>
       <view class='houseItems' bindtap="powerDrawer" data-statu="open">
         <view>
-          <text class='textOne'>房屋户型</text>
+          <text class='fontW textOne'>房屋户型</text>
           <text class='color houseDoor'>房屋户型的详细信息</text>
         </view>
         <view class='houseRight'>
@@ -48,13 +49,17 @@
     </view>
     <view class='houseItems'>
       <view>
-        <text class='textOne'>可住人数</text>
+        <text class='fontW textOne'>可住人数</text>
         <text class='color'>房屋标准入住人数</text>
       </view>
       <view class='nums'>
-        <text class='minus' bindtap='peopleMinus'></text>
-        <input class='num' value="{{peoples}}" name="people"></input>
-        <text class='plus' bindtap='peoplePlus'></text>
+        <view class='minu' bindtap='peopleMinus'>
+          <text class='minus' ></text>
+        </view>
+        <input type='number' class='num' value="{{peoples}}"  disabled='true' name="peoples"></input>
+        <view class='plus' bindtap='peoplePlus' data-people="{{peoples}}">
+          <image class='addImg' src='../../../image/house/add.png' mode='widthFix'></image>
+        </view>
       </view>
     </view>
     <view class='door-submit'>
@@ -73,45 +78,75 @@
         <view class='items'>
           <label>卧室</label>
           <view class='doorNums'>
-            <text class='minu' bindtap='bindMinus' data-obj="{{obj}}"></text>
-            <input class='num' type='number' value='{{ws}}' name='ws'></input>
-            <text class='plus' bindtap='bindPlus'></text>
+            <view class='minu' bindtap='bindMinus' data-obj="{{obj}}">
+              <image class='addImg' src='../../../image/house/minus.png' mode='widthFix'></image>
+            </view>
+            <view>
+              <input class='num' type='number' value='{{ws}}' name='ws'></input>
+            </view>
+            <view class='plus' bindtap='bindPlus'>
+              <image class='addImg' src='../../../image/house/add.png' mode='widthFix'></image>
+            </view>
           </view>
         </view>
         <view class='items'>
           <label>客厅</label>
           <view class='doorNums'>
-            <text class='minu' bindtap='ktMinus'></text>
-            <input class='num' value='{{kt}}' name='kt'></input>
-            <text class='plus' bindtap='ktPlus'></text>
+            <view class='minu' bindtap='ktMinus'>
+              <image class='addImg' src='../../../image/house/minus.png' mode='widthFix' bindtap='ktMinus'></image>
+            </view>
+            <view>
+              <input class='num' value='{{kt}}' name='kt'></input>
+            </view>
+            <view class='plus' bindtap='ktPlus'>
+              <image class='addImg' src='../../../image/house/add.png' mode='widthFix' bindtap='ktPlus'></image>
+            </view>
           </view>
         </view>
         <view class='items'>
           <label>厨房</label>
           <view class='doorNums'>
-            <text class='minu' bindtap='cfMinus'></text>
-            <input class='num' value='{{cf}}' name='cf'></input>
-            <text class='plus' bindtap='cfPlus'></text>
+            <view class='minu' bindtap='cfMinus'>
+              <image class='addImg' src='../../../image/house/minus.png' mode='widthFix'></image>
+            </view>
+            <view>
+              <input class='num' value='{{cf}}' name='cf'></input>
+            </view>
+            <view class='plus' bindtap='cfPlus'>
+              <image class='addImg' src='../../../image/house/add.png' mode='widthFix'></image>
+            </view>
           </view>
         </view>
         <view class='items'>
           <label>独立卫生间</label>
           <view class='doorNums'>
-            <text class='minu' bindtap='dwcMinus'></text>
-            <input class='num' value='{{dwc}}' name='dwc'></input>
-            <text class='plus' bindtap='dwcPlus'></text>
+            <view class='minu' bindtap='dwcMinus'>
+              <image class='addImg' src='../../../image/house/minus.png' mode='widthFix'></image>
+            </view>
+            <view>
+              <input class='num' value='{{dwc}}' name='dwc'></input>
+            </view>
+            <view class='plus' bindtap='dwcPlus'>
+              <image class='addImg' src='../../../image/house/add.png' mode='widthFix'></image>
+            </view>
           </view>
         </view>
         <view class='items'>
           <label>公共卫生间</label>
           <view class='doorNums'>
-            <text class='minu' bindtap='gwcMinus'></text>
-            <input class='num' value='{{gwc}}' name='gwc'></input>
-            <text class='plus' bindtap='gwcPlus'></text>
+            <view class='minu' bindtap='gwcMinus'>
+              <image class='addImg' src='../../../image/house/minus.png' mode='widthFix'></image>
+            </view>
+            <view>
+              <input class='num' value='{{gwc}}' name='gwc'></input>
+            </view>
+            <view class='plus' bindtap='gwcPlus'>
+              <image class='addImg' src='../../../image/house/add.png' mode='widthFix'></image>
+            </view>
           </view>
         </view>
         <view class='submit'>
-          <button class='subBtn' formType="submit"  data-statu='close'>确定</button>
+          <button class='subBtn' formType="submit" data-statu='close'>确定</button>
         </view>
       </view>
     </form>

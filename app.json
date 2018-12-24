@@ -1,30 +1,25 @@
 {
   "pages": [
-    "pages/houseManage/houseManage",
-    "pages/houseManage/addHouse/addHouse",
-   
-    "pages/houseManage/houseDescribe/houseDescribe",
-  
-    
-    
-    
-    "pages/me/me",
-    
-    "pages/houseManage/houseDetails/houseDetails",
     "pages/index/index",
-    "pages/houseManage/houseStatus/houseStatus",
-   
-    "pages/houseManage/property/property",
-    "pages/houseManage/recordIn/recordIn",
-    "pages/confirmIn/confirmIn",
+    "pages/blueTooth/blueTooth",
+    "pages/ble/ble",
+    "pages/index/getPhoneNumber/getPhoneNumber",
+    "pages/houseManage/houseManage",
     "pages/houseManage/twoCode/twoCode",
+    "pages/houseManage/houseDescribe/houseDescribe",
+    "pages/me/me",
+    "pages/houseManage/houseStatus/houseStatus",
+    "pages/houseManage/addHouse/addHouse",
+    "pages/houseManage/houseDetails/houseDetails",
+    "pages/houseManage/recordIn/recordIn",
+    "pages/houseManage/property/property",
+    "pages/confirmIn/confirmIn",
     "pages/houseManage/bindDevice/bindDevice",
     "pages/authen/authen",
     "pages/scanBind/scanBind",
     "pages/faceRecognition/faceRecognition",
     "pages/houseManage/openRecord/openRecord",
     "pages/houseManage/houseSetting/houseSetting",
-    "pages/index/getPhoneNumber/getPhoneNumber",
     "pages/logs/logs"
   ],
   "window": {

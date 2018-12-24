@@ -10,7 +10,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     phoneNumber: '',
-    switchBtn:false
+    switchBtn: false
   },
 
   /**
@@ -62,20 +62,45 @@ Page({
   /**
    * 房东房客切换
    */
-  switchCheck:function(e){
-    var that=this
+  switchCheck: function (e) {
+    var that = this
     var switchBtn = that.data.switchBtn
-    if (switchBtn){
+    if (switchBtn) {
       that.setData({
-        switchBtn:false
+        switchBtn: false
       })
-    }else{
+    } else {
       that.setData({
-        switchBtn:true
+        switchBtn: true
       })
     }
   },
 
+  /**
+   * 身份认证
+   */
+  sendAuth: function () {
+    wx.navigateTo({
+      url: '../authen/authen'
+    })
+  },
+  /**
+   * 发送二维码
+   */
+  // sendCode: function () {
+  //   wx.navigateTo({
+  //     url: '../houseManage/twoCode/twoCode',
+  //   })
+  // },
+
+  /**
+   * 入住记录
+   */
+  recordInList: function () {
+    wx.navigateTo({
+      url: '../houseManage/recordIn/recordIn',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -87,6 +112,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
   },
 
   /**

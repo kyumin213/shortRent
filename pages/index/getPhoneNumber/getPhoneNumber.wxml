@@ -1,4 +1,14 @@
 <!--pages/index/getPhoneNumber/getPhoneNumber.wxml-->
-<image src='http://hbimg-other.b0.upaiyun.com/img/promotion/40a6314fc88caf35578712e7d8ba1a55ecf147393f8af'></image>
-<button type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信授权登陆</button>
-
+<!-- <image src='http://hbimg-other.b0.upaiyun.com/img/promotion/40a6314fc88caf35578712e7d8ba1a55ecf147393f8af'></image> -->
+<view class='bg-c'>
+  <view class='top'>
+    <image class='loginImg' src='../../../image/logoSq.png' mode='widthFix'></image>
+    <view class='txt'>欢迎来到熹自租智能开锁</view>
+  </view>
+  <view class='bom'>
+  <view class='txt'>网页由该小程序开发，请确认授权以下信息</view>
+  <view class='getMsg'>获取你的公开信息（昵称、头像等）</view>
+   <button class='logBtn' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信授权登陆</button>
+  </view>
+ 
+</view>

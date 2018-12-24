@@ -10,7 +10,8 @@ Page({
     houseid: '',
     QR_codeBase64: '',
     houseInviteCodeNumber: '',
-    phones:''
+    phones:'',
+    houseName:''
   },
 
   /**
@@ -21,9 +22,11 @@ Page({
     let pkCode = wx.getStorageSync('loginData')
     let userAccountPkcode = pkCode.userAccountPkcode
     let housePkcode = options.housePkcode
+    let houseName = options.houseName
     that.setData({
       userAccountPkcode: userAccountPkcode,
-      houseid: housePkcode
+      houseid: housePkcode,
+      houseName: houseName
     })
     that.createInviteCode()
   },

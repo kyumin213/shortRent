@@ -1,0 +1,25 @@
+/* pages/blueTooth/blueTooth.wxss */
+.center{
+  width: 100%;
+  /* text-align: center; */
+  margin-top: 30rpx;
+}
+.center .hei{
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 2rpx solid rgb(0,177,197);
+  border-radius: 20rpx;
+  margin: 50rpx auto 0 auto;
+  text-align: center;
+  position: relative;
+}
+.hei .fg{
+  display: inline-block;
+  width: 4rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 50%; 
+  top:-50rpx;
+  background: rgb(0,177,197);
+}

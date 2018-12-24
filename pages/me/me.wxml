@@ -1,48 +1,49 @@
 <!--pages/me/me.wxml-->
 <view class='bg-c'>
   <view class='me-top'>
+      <button class='getUser' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <view class='myHead'>
-      <image class='head-icon' src='{{userInfo.avatarUrl}}' mode='widthFix'></image>
+       <image class='head-icon' src='{{userInfo.avatarUrl}}' mode='widthFix'></image> 
     </view>
-    <text class='userName'>{{userInfo.nickName}}</text>
+    
+     <text class='userName'>{{userInfo.nickName}}</text> 
     <!-- <text class='userId'>{{phoneNumber}}</text> -->
     <text class="{{switchBtn?'hidden':'show'}} txt">成为熹自租房东1天啦!</text>
-     <text class="{{switchBtn?'show':'hidden'}} txt">成为熹自租房客1天啦!</text>
+    <text class="{{switchBtn?'show':'hidden'}} txt">成为熹自租房客1天啦!</text>
     <view class='switch'>
-      <button class="switchBtn {{switchBtn?'active':''}}" bindtap='switchCheck'>切换</button>
+      <text class="switchBtn {{switchBtn?'active':''}}" bindtap='switchCheck'>切换</text>
     </view>
   </view>
   <view class='listItem'>
     <view class='lists'>
-      <navigator class='items'>
+      <view class='items'>
         <view class='items-Img'>
-          <image class='list-icon' src='../../image/me/fd-icon.png'></image>
+          <image class="{{switchBtn?'hidden':'show'}} list-icon" src='../../image/me/fd-icon.png'></image>
+          <image class="{{switchBtn?'show':'hidden'}} list-icon" src='../../image/me/fk-icon.png'></image>
         </view>
         <view class='list_txt'>
-          <text class="{{switchBtn?'hidden':'show'}}">我的房东</text>
-          <text class="{{switchBtn?'show':'hidden'}}">我的房客</text>
+          <text class="{{switchBtn?'hidden':'show'}}">我是房东</text>
+          <text class="{{switchBtn?'show':'hidden'}}">我是房客</text>
         </view>
-      </navigator>
-      <navigator class='items' url='../houseManage/twoCode/twoCode' hover-class='none'>
+      </view>
+      <!-- <view class='items' bindtap='sendCode'>
         <view class='items-Img'>
           <image class='list-icon' src='../../image/me/ewm.png'></image>
         </view>
         <view class='list_txt'>发送二维码</view>
-      </navigator>
-    </view>
-    <view class='lists'>
-      <navigator class='items' url='../authen/authen' hover-class='none'>
+      </view> -->
+      <view class='items' bindtap='sendAuth'>
         <view class='items-Img'>
           <image class='list-icon' src='../../image/me/sfrz.png'></image>
         </view>
         <view class='list_txt'>身份认证</view>
-      </navigator>
-      <navigator class='items' url='../houseManage/recordIn/recordIn' hover-class='none'>
+      </view>
+      <view class='items' bindtap='recordInList'>
         <view class='items-Img'>
           <image class='list-icon' src='../../image/me/inList.png'></image>
         </view>
         <view class='list_txt'>入住记录</view>
-      </navigator>
+      </view>
     </view>
   </view>
 </view>

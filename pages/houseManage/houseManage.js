@@ -7,7 +7,7 @@ Page({
    */
   data: {
     houseIcon: '../../image/house/house-icon.png',
-    hashList: false,
+    hashList: true,
     houseData: {},
     pkCode: '',
     index:''

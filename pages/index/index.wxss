@@ -1,14 +1,14 @@
 /* pages/index/index.wxss */
 
 .recom {
-  margin: 20rpx 0 20rpx 80rpx;
+  margin: 40rpx 0 22rpx 58rpx;
   color: rgb(28, 28, 28);
   font-size: 32rpx;
+  font-weight: bold;
 }
 
-.banner {
-  width: 100%; 
-  height: 598rpx; 
+.banner { 
+  height: 588rpx; 
   text-align: center;
   margin: 0 auto;
   box-sizing: border-box;
@@ -23,8 +23,7 @@
   
 }
 .silde-imgage{
-  width: 87%;
-
+  width: 90%;
 }
 
 .open-btn {
@@ -37,7 +36,7 @@
   width: 123pt;
 }
 .swiper .wx-swiper-dots.wx-swiper-dots-horizontal{
-     margin-bottom: 110rpx;
+     margin-bottom: 70rpx;
 }
 /*输入邀请码  */
 .inpCode{
@@ -64,4 +63,5 @@
   border: 4rpx solid rgb(0,177,197);
   border-radius: 46rpx;
   margin: 38rpx auto 28rpx auto;
+  font-size: 48rpx;
 }

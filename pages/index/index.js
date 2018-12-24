@@ -60,10 +60,13 @@ Page({
       success: function (res) {
         var result = res.data
         if (result.success == '200') {
+          app.showToast('申请成功','success',2000)
           that.setData({
             displayCheck: false,
             displayOpen: true
           })
+        } else {
+          app.showToast(res.data.message,'失败',2000)
         }
       }, fail: function () {
         app.showToast('开锁失败，请重试！', 'none', 1000)
@@ -91,6 +94,13 @@ Page({
             content: res.data.message
           })
           return false
+        } else if (res.data.data != '' || res.data.data!=null){
+          var mac = res.data.data.tggDeviceBlemac
+          var pwd = res.data.data.tggDeviceBlepwd
+          wx.navigateTo({
+            url: '../blueTooth/blueTooth?mac='+mac+'&pwd='+pwd,
+          })
+          console.log(res.data.data)
         }
       }
     })
@@ -274,6 +284,7 @@ function login() {
             app.mini_user_id = Pkcode
             app.userCertificationCount = CertificationCount
             app.houseCheckInState = houseCheckInState
+            // app.userInfo=login
 
             if (Mobile) {   //判断是否存在手机号，否则跳转授权微信页面
               app.mini_user_phoneNumber = Mobile
@@ -282,7 +293,7 @@ function login() {
                 url: 'getPhoneNumber/getPhoneNumber'
               })
             }
-            if (houseCheckInState == 0) {  //显示界面
+            if (houseCheckInState == 0 || houseCheckInState == 1) {  //显示界面
               that.setData({
                 openEvent: 'submitUnlock',
                 openText: 'OPEN',

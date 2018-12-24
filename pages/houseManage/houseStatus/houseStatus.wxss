@@ -21,28 +21,33 @@
   line-height: 46rpx;
 }
 
-.DoorDetails{
+.DoorDetails {
   background: #fff;
   box-sizing: border-box;
 }
-.DoorDetails .houseItems{
+
+.DoorDetails .houseItems {
   margin: 20rpx 40rpx 0 40rpx;
   border-bottom: 2rpx solid #ccc;
   padding: 40rpx 0 20rpx 0;
 }
-.DoorDetails .hxDetails{
+
+.DoorDetails .hxDetails {
   font-size: 26rpx;
   color: rgb(153, 153, 153);
   height: 80rpx;
   padding: 20rpx 40rpx 0 40rpx;
 }
-.DoorDetails .hxDetails text{
+
+.DoorDetails .hxDetails text {
   margin-right: 30rpx;
 }
-.DoorDetails .hxDetails .inpDis{
+
+.DoorDetails .hxDetails .inpDis {
   display: inline-block;
   width: 30rpx;
 }
+
 .houseItems .textOne {
   display: block;
   color: rgb(0, 177, 197);
@@ -60,20 +65,20 @@
   padding-right: 10rpx;
 }
 
-
-.houseItems .houseRight{
+.houseItems .houseRight {
   height: 90rpx;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-.houseRight .txtCol{
+
+.houseRight .txtCol {
   color: rgb(0, 177, 197);
 }
 
 .door-submit {
   position: fixed;
-  bottom: 50rpx;
+  bottom: 36rpx;
   left: 0;
   right: 0;
 }
@@ -81,10 +86,12 @@
 .door-submit .doorBtn {
   width: 80%;
   height: 90rpx;
+  line-height: 90rpx;
   border-radius: 44rpx;
   background-color: rgb(0, 177, 197);
   color: #fff;
   font-size: 36rpx;
+  box-shadow: 0 16rpx 8rpx 2rpx rgba(37, 215, 204, 0.09);
 }
 
 .nums {
@@ -104,24 +111,42 @@
 }
 
 .nums .plus {
-  display: inline-block;
   margin-left: 40rpx;
   width: 30rpx;
-  height: 4rpx;
-  background: rgb(0, 177, 197);
-  position: relative;
+  height: 40rpx;
+  line-height: 40rpx;
+  /* background: rgb(0, 177, 197); *//* background: #ccc; *//* position: relative; */
+}
+.nums .minu{
+  height: 46rpx;
+  line-height: 46rpx; 
+   margin-top:-14rpx; 
 }
 
-.nums .plus::after {
+/* .num .plus::before{
+  display: inline-block;
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 30rpx;
+  top: 14rpx;
+  left: 4rpx;
+  width: 34rpx;
   height: 4rpx;
   background: rgb(0, 177, 197);
   transform: rotate(90deg);
-}
+} */
+
+/* 
+.nums .plus::after {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  top: 14rpx;
+  left: 4rpx;
+  width: 34rpx;
+  height: 4rpx;
+   background: rgb(0, 177, 197); 
+   transform: rotate(90deg); 
+} */
 
 .nums .item {
   width: 80rpx;
@@ -152,42 +177,47 @@
   justify-content: flex-end;
 }
 
-
-.modal .showModal .items{
+.modal .showModal .items {
   margin-top: 0;
   padding-bottom: 0;
   height: 120rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2rpx solid #ccc;
+  box-sizing: border-box;
 }
-.modal .showModal .items:nth-child(2){
+
+/* .modal .showModal .items:nth-child(2){
   border-bottom: 2rpx solid #ccc;
 }
 .modal .showModal .items:nth-child(6){
   border-bottom: 2rpx solid #ccc;
-}
-.items .doorNums{
+} */
+
+.items .doorNums {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  height: 80rpx;
+  justify-content: space-around;
+  height: 100%;
+  box-sizing: border-box;
 }
-.items .doorNums .minu{
-  display: inline-block;
-  width: 26rpx;
-  height: 2rpx;
-  background: rgb(0, 157, 175);
+
+.items .doorNums .minu {
+  width: 30rpx;
   margin-right: 40rpx;
+  height:120rpx;
+  line-height: 96rpx;
 }
-.items .doorNums .plus{
-  width: 26rpx;
-  height: 2rpx;
-  background: rgb(0, 157, 175);
+
+.items .doorNums .plus {
   margin-left: 40rpx;
-  position: relative;
+  width: 30rpx;
+  height: 100%;
+  line-height: 120rpx;
 }
-.items .doorNums .plus::after{
+
+/* .items .doorNums .plus::after{
   content: '';
   position: absolute;
   top: 0;
@@ -197,13 +227,21 @@
   background: rgb(0, 157, 175);
   transform: rotate(90deg);
 
-}
-.items .doorNums .num{
+} */
+
+.items .doorNums .num {
   width: 50rpx;
   text-align: center;
   color: rgb(3, 180, 197);
   font-size: 36rpx;
 }
-.submit{
+
+.submit {
   margin-top: 0;
+}
+
+.addImg {
+  width: 30rpx;
+  height: 40rpx;
+  margin-top: 6rpx;
 }

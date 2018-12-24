@@ -4,7 +4,7 @@
     <view class='desCenter'>
       <view class='desTitle'>
         <view>
-          <text class='fonzCol hx'>房屋户型</text>
+          <text class='fonzCol fontW hx'>房屋户型</text>
           <text class='fonzCol sl'>示例</text>
         </view>
         <view class='color wordCount'>

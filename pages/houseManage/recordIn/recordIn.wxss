@@ -1,6 +1,12 @@
 /* pages/houseManage/recordIn/recordIn.wxss */
 .record{
-  margin-bottom: 102rpx;
+  /* margin-bottom: 102rpx; */
+}
+.isnull{
+  width: 100%;
+  text-align: center;
+  margin-top: 30rpx;
+  color: #ccc;
 }
 .recordList {
   display: flex;
@@ -14,6 +20,8 @@
 .recordList .tenantsName{
   font-size: 36rpx;
   color: rgb(3,180,197);
+   font-weight: 600; 
+  /* font-family: PingFang-SC-Bold; */
 }
 .recordList .tel{
   font-size: 26rpx;

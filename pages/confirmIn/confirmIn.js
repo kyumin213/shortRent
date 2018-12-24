@@ -32,6 +32,7 @@ Page({
   onLoad: function (options) {
     var that = this
     var names = options.names
+    console.log(names)
     var cardId=options.cardId
     var checkInTime = options.checkInTime
     var housePkcode = options.housePkcode

@@ -10,21 +10,33 @@
   text-align: center;
   color: #fff;
   margin-bottom: 12rpx;
-}
-
-.myHead {
   padding-top: 40rpx;
 }
 
-.head-icon {
-  width: 158rpx;
-  height: 160rpx;
-  border-radius: 100%;
+.myHead {
+   width: 132rpx;
+   height: 132rpx;  
+   margin: 0 auto;
+   border-radius: 50%; 
+   border: 6rpx solid #fff; 
 }
 
-.userName, .userId {
+.head-icon {
+  /* width: 100%; */
+  /* border: 6rpx solid #fff; */
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 100%;
+}
+.getUser{
+  width: 80%;
+  border-radius: 42rpx;
+}
+.userName {
   font-size: 36rpx;
   display: block;
+  font-weight: bold;
+  margin-top: 30rpx;
 }
 
 .me-tabs {
@@ -51,43 +63,32 @@
   width: 100%;
 }
 
-.listItem {
-  width: 100%;
-  background: #fff;
-  padding: 26rpx 66rpx;
-  box-sizing: border-box;
-}
-
 .lists {
   font-size: 32rpx;
   width: 100%;
   display: flex;
   align-items: center;
+  padding: 90rpx 0 110rpx 0;
+  background: #fff;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .lists .items {
-  width: 50%;
+  height: 100%;
+   width: 33.3%; 
   text-align: center;
-  height: 308rpx;
   margin: 0 auto;
+  border-right: 2rpx solid rgb(229, 229, 229);
 }
 
-.listItem .lists:first-child {
-  border-bottom: 2rpx solid rgb(245, 245, 245);
-}
-
-.lists .items:nth-child(2) {
-  border-left: 2rpx solid rgb(245, 245, 245);
+.lists .items:last-child {
+  border-right: none;
 }
 
 .listItem .lists:first-child .items-Img {
-  margin-top: 110rpx;
-  width: 100%;
-}
-
-.listItem .lists:last-child .items-Img {
-  margin-top: 72rpx;
+  width: 54rpx;
+  margin: 0 auto;
 }
 
 .list-icon {
@@ -96,27 +97,34 @@
 }
 
 .lists .list_txt {
-  color: rgb(51, 51, 51);
-  font-size: 24rpx;
-  margin-top: 40rpx;
+  color: rgb(153, 153, 153);
+  font-size: 22rpx;
+  margin-top: 14rpx;
+}
+
+.lists :first-child .list_txt {
+  margin-top: 20rpx;
 }
 
 .switch {
-  margin-top: 20rpx;
-  padding-bottom: 38rpx;
+  margin-top: 28rpx;
+  padding-bottom: 78rpx;
+  height: auto;
 }
 
 .switch .switchBtn {
-  width: 148rpx;
-  height: 42rpx;
+  display: inline-block;
+  width: 168rpx;
+  height: 38rpx;
   border-radius: 22rpx;
   background: #fff;
   color: rgb(3, 181, 194);
-  line-height: 42rpx;
+  line-height: 38rpx;
+  border: 4rpx solid #fff;
   font-size: 26rpx;
-  padding-bottom: 38rpx;
 }
 
 .switch .active {
-  background: rgb(212, 212, 212);
+  background: rgb(3, 181, 194);
+  color: #fff;
 }

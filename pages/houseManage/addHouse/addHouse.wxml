@@ -3,35 +3,40 @@
   <form bindsubmit='next'>
     <view class='house-list'>
       <view class='items'>
-        <input placeholder='中国' placeholder-class='color'></input>
+        <input class='fontW fz' placeholder='中国' placeholder-class='color'></input>
         <text class='jt'></text>
       </view>
       <view class='items'>
         <picker mode="region" bindchange="translate" value="{{region}}" custom-item="{{customItem}}">
-          <input class='inpRegion' name="city" disabled='true' placeholder='城市/区域' placeholder-class='color' value='{{region}}'></input>
+          <input class='fontW fz' name="city" disabled='true' placeholder='城市/区域' placeholder-class='color' value='{{region}}'></input>
         </picker>
         <text class='jt'></text>
       </view>
       <view class='items'>
-        <input type='text' placeholder='街道地址' name="street" placeholder-class='color' value='{{street}}'></input>
+        <input type='text' class='fontW fz' placeholder='街道地址' name="street" placeholder-class='color' value='{{street}}'></input>
         <!-- <text class='jt'></text> -->
       </view>
-      <view class='items' bindtap="powerDrawer" data-statu="show">
-        <input placeholder='小区/楼号/单元号/门牌号' disabled='true' name='area' placeholder-class='color' value='{{xq}}{{lh}}{{dy}}{{mp}}'></input>
-        <text class='jt'></text>
+      <view class='items'>
+        <input class='fontW fz' placeholder='小区/楼号/单元号/门牌号' name='detailInfo' placeholder-class='color' value='{{detailInfo}}'></input>
+        <!-- <text class='jt'></text> -->
       </view>
-      <view class='position'>
-        <text class='color'>位置</text>
+      <view class='position' bindtap='getAddress'>
+        <text class='fontW fz'>位置</text>
         <text class='remand'>请放心，为了保障您的隐私，在客人预定之前我们不会展示您的门牌号</text>
       </view>
     </view>
-    <view class='next'>
+    <!-- <view class='next'>
       <button class='nextBtn' formType="submit">下一步</button>
-    </view>
+    </view> -->
+  
+  <view class='section-map'>
+    <map id="myMap" style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" show-location>
+      <cover-view class='next'>
+        <button class='nextBtn' formType="submit">下一步</button>
+      </cover-view>
+    </map>
+  </view>
   </form>
-  <!-- <view class='section-map'>
-    <map id="myMap" style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" show-location></map>
-  </view> -->
   <!--小区  -->
   <view animation="{{animationData}}" class="modal" wx:if="{{areaStatus}}">
     <form bindsubmit="preDetails" class='modalShow'>

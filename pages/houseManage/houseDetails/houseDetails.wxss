@@ -31,6 +31,7 @@ picker {
   height: 110rpx;
   border-bottom: 2rpx solid #ccc;
   font-size: 32rpx;
+  color: #666;
 }
 
 .house-list .items input {
@@ -71,9 +72,9 @@ map {
   z-index: 99;
 }
 
-/* .house-list .color{
-  color: rgb(102, 102, 102);
-} */
+.house-list .color {
+  color: #333;
+}
 
 /*下一步按钮  */
 
@@ -85,7 +86,7 @@ map {
   z-index: 999;
 }
 
-.next .nextBtn {
+.nextBtn {
   width: 80%;
   height: 90rpx;
   line-height: 90rpx;
@@ -215,16 +216,19 @@ map {
   justify-content: space-around;
   box-sizing: border-box;
 }
-.unBindBtn .unbindSub,.unBindBtn .sendCode{
-  width: 340rpx;
-  height: 78rpx;
-  line-height: 78rpx;
+
+.unBindBtn .unbindSub, .unBindBtn .sendCode {
+  width: 596rpx;
+  height: 90rpx;
+  line-height: 90rpx;
   background-color: #fff;
-  font-size: 30rpx;
+  font-size: 36rpx;
   color: rgb(0, 177, 197);
-   border: 2rpx solid rgb(0, 177, 197);
-   border-radius: 40rpx;
+  border: 2rpx solid rgb(0, 177, 197);
+  border-radius: 44rpx;
+  box-shadow: 0 16rpx 8rpx 2rpx rgba(37,215,204,0.09);
 }
+
 .houseBtn button {
   display: inline-block;
   /* width: 50%; */
@@ -258,6 +262,7 @@ map {
 
 .houseBtn .bind {
   background: rgb(0, 177, 197);
+  box-shadow: 0 16rpx 8rpx 2rpx rgba(37, 215, 204, 0.09);
 }
 
 .unBindBtn .sendCode {

@@ -1,6 +1,8 @@
 // pages/houseManage/addHouse/addHouse.js
 var show = false
 var app = getApp().globalData
+// var bmap=require('../../../utils/bmap-wx.min.js');
+// var wxMarkerData = [];
 var item = {};
 Page({
 
@@ -11,6 +13,15 @@ Page({
     item: {
       show: show
     },
+    markers:[{
+      id: 1,
+      latitude: '',
+      longitude: '',
+      address:'',
+      iconPath: '../../../image/location.png',
+      width: 50,
+      height: 50
+    }],
     province: '城市/区域',
     detailaddress: '',
     showModalStatus: false,
@@ -26,11 +37,7 @@ Page({
     street: '',
     src: '../../../image/house/house-bg2x.png',
     region: '',
-    area: {},
-    xq: '',
-    lh: '',
-    dy: '',
-    mp: '',
+    detailInfo: '',
     city: '',
   },
 
@@ -38,28 +45,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
+    var that = this
     let houseData = wx.getStorageSync('houseData')
-    let houseDetail = wx.getStorageSync('houseDetails')
     let pkCode = wx.getStorageSync('loginData')
     if (houseData != '' || houseDetail!='' || pkCode!=''){
       that.setData({
         region: houseData.city,
         street: houseData.street,
-        area: houseData.area,
-        xq: houseDetail.xq,
-        lh: houseDetail.lh,
-        dy: houseDetail.dy,
-        mp: houseDetail.mp
-        // housePkcode: options.housePkcode
-
+        detailInfo: houseData.detailInfo,
       })
     }
-
   },
 
-  houseAreaChange:function(){
+  // houseAreaChange:function(){
 
+  // },
+  getAddress:function(){
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+      }
+    })
   },
 
   /**
@@ -181,9 +191,8 @@ Page({
    */
   next: function (e) {
     //false is vail
-    let data = e.detail.value;
+    let data = e.detail.value
     
-
     let house = {}
     // if (data!=''){
     var houseData = wx.getStorageSync('houseData') || {}
@@ -194,8 +203,8 @@ Page({
     if (data.city) {
       houseData.city, data.city
     }
-    if (data.area) {
-      houseData.area, data.area
+    if (data.detailInfo) {
+      houseData.detailInfo, data.detailInfo
     }
     wx.setStorageSync('houseData', data)
     wx.navigateTo({

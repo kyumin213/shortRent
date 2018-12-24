@@ -1,5 +1,6 @@
 <!--pages/houseManage/recordIn/recordIn.wxml-->
 <view class='bg-c'>
+<view class='isnull' wx:if="{{recordList==''}}">暂无记录</view>
   <view class='record' wx:for="{{recordList}}" wx:key="{{index}}">
     <view class='recordList' data-index="{{index}}" data-id="{{index}}" bindtap='checkIn'>
       <view class='recordLeft'>
